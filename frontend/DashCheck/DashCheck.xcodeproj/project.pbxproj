@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B19086C11DEFF3B500298326 /* BarcodeReaderViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B19086C01DEFF3B500298326 /* BarcodeReaderViewController.swift */; };
 		B1D49D831DEBDA5700F55CAB /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D49D821DEBDA5700F55CAB /* AppDelegate.swift */; };
 		B1D49D851DEBDA5700F55CAB /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1D49D841DEBDA5700F55CAB /* ViewController.swift */; };
 		B1D49D881DEBDA5700F55CAB /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B1D49D861DEBDA5700F55CAB /* Main.storyboard */; };
@@ -16,6 +17,7 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		B19086C01DEFF3B500298326 /* BarcodeReaderViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = BarcodeReaderViewController.swift; sourceTree = "<group>"; };
 		B1D49D7F1DEBDA5700F55CAB /* DashCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = DashCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B1D49D821DEBDA5700F55CAB /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B1D49D841DEBDA5700F55CAB /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -59,6 +61,7 @@
 				B1D49D821DEBDA5700F55CAB /* AppDelegate.swift */,
 				B1D49D841DEBDA5700F55CAB /* ViewController.swift */,
 				B1D49D861DEBDA5700F55CAB /* Main.storyboard */,
+				B19086C01DEFF3B500298326 /* BarcodeReaderViewController.swift */,
 				B1D49D8C1DEBDA5700F55CAB /* Assets.xcassets */,
 				B1D49D8E1DEBDA5700F55CAB /* LaunchScreen.storyboard */,
 				B1D49D911DEBDA5700F55CAB /* Info.plist */,
@@ -141,6 +144,7 @@
 			files = (
 				B1D49D851DEBDA5700F55CAB /* ViewController.swift in Sources */,
 				B1D49D831DEBDA5700F55CAB /* AppDelegate.swift in Sources */,
+				B19086C11DEFF3B500298326 /* BarcodeReaderViewController.swift in Sources */,
 				B1D49D8B1DEBDA5700F55CAB /* DashCheck.xcdatamodeld in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -303,6 +307,7 @@
 				B1D49D961DEBDA5700F55CAB /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
 
