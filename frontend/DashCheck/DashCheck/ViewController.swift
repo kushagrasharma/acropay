@@ -36,7 +36,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         self.setupCaptureSession()
     }
     
-    private func setupCaptureSession(){
+    fileprivate func setupCaptureSession(){
         self.captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         let deviceInput:AVCaptureDeviceInput
         do {
@@ -48,12 +48,12 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         if (captureSession.canAddInput(deviceInput)){
             // Show live feed
             captureSession.addInput(deviceInput)
-            self.setupPreviewLayer(completion: {
+            self.setupPreviewLayer({
                 self.captureSession.startRunning()
                 self.addMetaDataCaptureOutToSession()
             })
         } else {
-            self.showError(error: "Error while setting up input captureSession.")
+            self.showError("Error while setting up input captureSession.")
         }
     }
     
@@ -62,7 +62,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
      
      - parameter completion: Completion handler to invoke if setting up the feed was successful.
      */
-    private func setupPreviewLayer(completion:() -> ())
+    fileprivate func setupPreviewLayer(_ completion:() -> ())
     {
         self.captureLayer = AVCaptureVideoPreviewLayer(session: captureSession)
         
@@ -72,7 +72,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             self.view.layer.addSublayer(capLayer)
             completion()
         } else {
-            self.showError(error: "An error occured beginning video capture")
+            self.showError("An error occured beginning video capture")
         }
     }
     
@@ -80,7 +80,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     /**
      Handles identifying what kind of data output we want from the session, in our case, metadata and the available types of metadata.
      */
-    private func addMetaDataCaptureOutToSession()
+    fileprivate func addMetaDataCaptureOutToSession()
     {
         let metadata = AVCaptureMetadataOutput()
         self.captureSession.addOutput(metadata)
@@ -104,7 +104,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
      
      - parameter error: The error message.
      */
-    private func showError(error:String)
+    fileprivate func showError(_ error:String)
     {
         let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
         let dismiss:UIAlertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive, handler:{(alert:UIAlertAction) in
