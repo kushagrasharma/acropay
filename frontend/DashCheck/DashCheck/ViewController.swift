@@ -85,7 +85,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         let metadata = AVCaptureMetadataOutput()
         self.captureSession.addOutput(metadata)
         metadata.metadataObjectTypes = metadata.availableMetadataObjectTypes
-        metadata.setMetadataObjectsDelegate(self, queue: DispatchQueue.main.sync{})
+        metadata.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
     }
     
     //MARK: Delegate Methods
