@@ -78,7 +78,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     
     //MARK: Metadata capture
     /**
-     Handles identifying what kind of data output we want from the session, in our case, metadata and the available types of metadata.
+     Handles identifying what kind of data output we want from sthe session, in our case, metadata and the available types of metadata.
      */
     fileprivate func addMetaDataCaptureOutToSession()
     {
@@ -89,7 +89,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     }
     
     //MARK: Delegate Methods
-    @nonobjc func captureOutput(_:didOutputMetadataObjects, metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!)
+    @nonobjc func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!)
     {
         for metadata in metadataObjects{
             let decodedData:AVMetadataMachineReadableCodeObject = metadata as! AVMetadataMachineReadableCodeObject
