@@ -85,11 +85,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         let metadata = AVCaptureMetadataOutput()
         self.captureSession.addOutput(metadata)
         metadata.metadataObjectTypes = metadata.availableMetadataObjectTypes
-        metadata.setMetadataObjectsDelegate(self, queue: DispatchQueue.main.sync())
+        metadata.setMetadataObjectsDelegate(self, queue: DispatchQueue.main.sync{})
     }
     
     //MARK: Delegate Methods
-    @nonobjc func captureOutput(_:didOutputMetadataObjects, metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!)
+    @nonobjc func captureOutput(captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [AnyObject]!, fromConnection connection: AVCaptureConnection!)
     {
         for metadata in metadataObjects{
             let decodedData:AVMetadataMachineReadableCodeObject = metadata as! AVMetadataMachineReadableCodeObject
