@@ -37,9 +37,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     fileprivate func setupCaptureSession()
     {
         self.captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
-        
-        if let deviceInput = AVCaptureDeviceInput.deviceInputWithDevice(self.captureDevice) as? AVCaptureDeviceInput
-        {
+        do{
+            let deviceInput = try AVCaptureDeviceInput(device: self.captureDevice) as AVCaptureDeviceInput?
             //Add the input feed to the session and start it
             self.captureSession.addInput(deviceInput)
             self.setupPreviewLayer({
@@ -47,9 +46,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
                 self.addMetaDataCaptureOutToSession()
             })
         }
-        else
-        {
-            self.showError(setupError!.localizedDescription)
+        catch let error as NSError{
+            print("hello this is caused by something")
+            self.showError(error.localizedDescription)
         }
         
         
@@ -57,7 +56,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     
     fileprivate func setupPreviewLayer(_ completion:() -> ())
     {
-        self.captureLayer = AVCaptureVideoPreviewLayer.withSession(self.captureSession) as? AVCaptureVideoPreviewLayer
+        self.captureLayer = AVCaptureVideoPreviewLayer(session: self.captureSession) as AVCaptureVideoPreviewLayer
         
         if let capLayer = self.captureLayer
         {
@@ -68,6 +67,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         }
         else
         {
+            
             self.showError("An error occured beginning video capture.")
         }
     }
@@ -95,6 +95,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     //MARK: Utility Functions
     fileprivate func showError(_ error:String)
     {
+
         let alertController = UIAlertController(title: "Error", message: error, preferredStyle: .alert)
         let dismiss:UIAlertAction = UIAlertAction(title: "Ok", style: UIAlertActionStyle.destructive, handler:{(alert:UIAlertAction!) in
             alertController.dismiss(animated: true, completion: nil)
