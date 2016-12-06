@@ -132,6 +132,7 @@
                     </view>
                     <connections>
                         <outlet property="productName" destination="dnT-Ut-p9n" id="hNi-aS-EkG"/>
+                        <segue destination="MQt-pa-XIt" kind="show" identifier="productAddedToCart" id="Uet-Gc-gi5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VnD-2B-iNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -139,4 +140,7 @@
             <point key="canvasLocation" x="926" y="36"/>
         </scene>
     </scenes>
+    <inferredMetricsTieBreakers>
+        <segue reference="Uet-Gc-gi5"/>
+    </inferredMetricsTieBreakers>
 </document>

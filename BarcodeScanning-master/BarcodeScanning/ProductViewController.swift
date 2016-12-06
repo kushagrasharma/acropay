@@ -13,7 +13,7 @@ class ProductViewController: UIViewController {
     @IBOutlet var productName : UILabel!
     
     @IBAction func addToCart(_ sender: UIButton){
-        
+        performSegue(withIdentifier: "productAddedToCart", sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
