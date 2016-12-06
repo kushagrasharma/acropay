@@ -88,7 +88,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             let decodedData:AVMetadataMachineReadableCodeObject = metaData as! AVMetadataMachineReadableCodeObject
             self.lblDataInfo.text = decodedData.stringValue
             self.lblDataType.text = decodedData.type
-            print(decodedData.stringValue)
+            performSegue(withIdentifier: "barcodeScannedSegue", sender: self)
+            
         }
     }
     
@@ -102,6 +103,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         })
         alertController.addAction(dismiss)
         self.present(alertController, animated: true, completion: nil)
+    }
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        let destinationViewController = segue.destination as! CartViewController
+        destinationViewController.barcodeString = self.lblDataInfo.text!
     }
 
 }

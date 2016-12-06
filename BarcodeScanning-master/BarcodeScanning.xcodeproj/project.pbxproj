@@ -13,6 +13,8 @@
 		339379A71B080C0A003A722D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339379A61B080C0A003A722D /* Images.xcassets */; };
 		339379AA1B080C0A003A722D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339379A81B080C0A003A722D /* LaunchScreen.xib */; };
 		339379B61B080C0A003A722D /* BarcodeScanningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339379B51B080C0A003A722D /* BarcodeScanningTests.swift */; };
+		B17648D11DF658C2007A4F84 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17648CF1DF658C2007A4F84 /* CartViewController.swift */; };
+		B17648D21DF658C2007A4F84 /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17648D01DF658C2007A4F84 /* CartViewController.xib */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -36,6 +38,8 @@
 		339379AF1B080C0A003A722D /* BarcodeScanningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarcodeScanningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		339379B41B080C0A003A722D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		339379B51B080C0A003A722D /* BarcodeScanningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanningTests.swift; sourceTree = "<group>"; };
+		B17648CF1DF658C2007A4F84 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
+		B17648D01DF658C2007A4F84 /* CartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -80,6 +84,8 @@
 				3393799F1B080C0A003A722D /* AppDelegate.swift */,
 				339379A11B080C0A003A722D /* ViewController.swift */,
 				339379A31B080C0A003A722D /* Main.storyboard */,
+				B17648CF1DF658C2007A4F84 /* CartViewController.swift */,
+				B17648D01DF658C2007A4F84 /* CartViewController.xib */,
 				339379A61B080C0A003A722D /* Images.xcassets */,
 				339379A81B080C0A003A722D /* LaunchScreen.xib */,
 				3393799D1B080C0A003A722D /* Supporting Files */,
@@ -157,7 +163,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastUpgradeCheck = 0810;
-				ORGANIZATIONNAME = "Jordan Morgan";
+				ORGANIZATIONNAME = Acropay;
 				TargetAttributes = {
 					339379991B080C0A003A722D = {
 						CreatedOnToolsVersion = 6.3.1;
@@ -198,6 +204,7 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				B17648D21DF658C2007A4F84 /* CartViewController.xib in Resources */,
 				339379A51B080C0A003A722D /* Main.storyboard in Resources */,
 				339379AA1B080C0A003A722D /* LaunchScreen.xib in Resources */,
 				339379A71B080C0A003A722D /* Images.xcassets in Resources */,
@@ -219,6 +226,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				339379A21B080C0A003A722D /* ViewController.swift in Sources */,
+				B17648D11DF658C2007A4F84 /* CartViewController.swift in Sources */,
 				339379A01B080C0A003A722D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -356,7 +364,7 @@
 				DEVELOPMENT_TEAM = 7DUQYR6N65;
 				INFOPLIST_FILE = BarcodeScanning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sharma.barcodescanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharma.acropay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
@@ -370,7 +378,7 @@
 				DEVELOPMENT_TEAM = 7DUQYR6N65;
 				INFOPLIST_FILE = BarcodeScanning/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = com.sharma.barcodescanner;
+				PRODUCT_BUNDLE_IDENTIFIER = com.sharma.acropay;
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_VERSION = 3.0;
 			};
