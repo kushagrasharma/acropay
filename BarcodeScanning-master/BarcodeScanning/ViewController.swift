@@ -47,7 +47,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             })
         }
         catch let error as NSError{
-            print("hello this is caused by something")
             self.showError(error.localizedDescription)
         }
         
@@ -89,6 +88,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             let decodedData:AVMetadataMachineReadableCodeObject = metaData as! AVMetadataMachineReadableCodeObject
             self.lblDataInfo.text = decodedData.stringValue
             self.lblDataType.text = decodedData.type
+            print(decodedData.stringValue)
         }
     }
     

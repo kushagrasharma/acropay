@@ -2,8 +2,8 @@
 //  AppDelegate.swift
 //  BarcodeScanning
 //
-//  Created by Jordan Morgan on 5/16/15.
-//  Copyright (c) 2015 Jordan Morgan. All rights reserved.
+//  Created by
+//  Copyright (c) 2016 Quikcart. All rights reserved.
 //
 
 import UIKit
