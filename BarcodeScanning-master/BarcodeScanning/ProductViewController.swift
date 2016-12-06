@@ -10,10 +10,19 @@ import UIKit
 
 class ProductViewController: UIViewController {
     var barcodeString:String = ""
+    @IBOutlet var productName : UILabel!
+    
+    @IBAction func addToCart(_ sender: UIButton){
+        
+    }
     override func viewDidLoad() {
         super.viewDidLoad()
 
         // Do any additional setup after loading the view.
+    }
+    
+    override func viewWillAppear(_ animated: Bool) {
+        
     }
 
     override func didReceiveMemoryWarning() {
