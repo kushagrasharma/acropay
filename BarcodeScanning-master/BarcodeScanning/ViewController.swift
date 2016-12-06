@@ -112,8 +112,11 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationViewController = segue.destination as! ProductViewController
-        destinationViewController.barcodeString = self.lblDataInfo.text!
+        // If barcode has been scanned and segueing to product page
+        if segue.identifier == "barcodeScannedSegue"{
+            let destinationViewController = segue.destination as! ProductViewController
+            destinationViewController.barcodeString = self.lblDataInfo.text!
+        }
     }
 
 }
