@@ -93,6 +93,12 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         }
     }
     
+    //MARK: IBAction Functions
+    
+    @IBAction func showCart(_ sender: UIButton){
+        performSegue(withIdentifier: "showCartSegue", sender: self)
+    }
+    
     //MARK: Utility Functions
     fileprivate func showError(_ error:String)
     {
@@ -106,7 +112,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     }
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        let destinationViewController = segue.destination as! CartViewController
+        let destinationViewController = segue.destination as! ProductViewController
         destinationViewController.barcodeString = self.lblDataInfo.text!
     }
 
