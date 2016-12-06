@@ -24,6 +24,13 @@
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhr-f7-UgC" userLabel="Output View">
                                 <rect key="frame" x="0.0" y="66.5" width="375" height="534"/>
+                                <subviews>
+                                    <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="0Gm-d7-Vmk">
+                                        <rect key="frame" x="292" y="8" width="75" height="30"/>
+                                        <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                                        <state key="normal" title="View Cart"/>
+                                    </button>
+                                </subviews>
                                 <color key="backgroundColor" cocoaTouchSystemColor="groupTableViewBackgroundColor"/>
                             </view>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="" textAlignment="center" lineBreakMode="tailTruncation" numberOfLines="0" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="YTE-kW-lGB" userLabel="DataType">
@@ -62,12 +69,13 @@
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
-            <point key="canvasLocation" x="111" y="36"/>
+            <point key="canvasLocation" x="109.59999999999999" y="35.532233883058474"/>
         </scene>
-        <!--Cart View Controller-->
+        <!--Product View Controller-->
         <scene sceneID="16G-Qx-1Df">
             <objects>
-                <viewController id="efN-DL-r6i" customClass="CartViewController" customModule="BarcodeScanning" customModuleProvider="target" sceneMemberID="viewController">
+                <placeholder placeholderIdentifier="IBFirstResponder" id="VnD-2B-iNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
+                <viewController id="efN-DL-r6i" customClass="ProductViewController" customModule="BarcodeScanning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="zYf-6j-76Y"/>
                         <viewControllerLayoutGuide type="bottom" id="vJV-f5-NbT"/>
@@ -78,7 +86,6 @@
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
                     </view>
                 </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VnD-2B-iNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="798" y="36"/>
         </scene>

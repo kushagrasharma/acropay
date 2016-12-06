@@ -1,5 +1,5 @@
 //
-//  CartViewController.swift
+//  ProductViewController.swift
 //  BarcodeScanning
 //
 //  Created by Kushagra Sharma on 12/5/16.
@@ -8,9 +8,11 @@
 
 import UIKit
 
-class CartViewController: UIViewController {
+class ProductViewController: UIViewController {
+    var barcodeString:String = ""
     override func viewDidLoad() {
         super.viewDidLoad()
+
         // Do any additional setup after loading the view.
     }
 
@@ -18,8 +20,6 @@ class CartViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    
     
 
     /*
