@@ -7,27 +7,33 @@
 //
 
 import UIKit
+import SwiftyJSON
 
-class ProductViewController: UIViewController {
+class  ProductViewController: UIViewController {
     var barcodeString:String = ""
     @IBOutlet var productName : UILabel!
+    @IBOutlet var productPrice : UILabel!
     
     @IBAction func addToCart(_ sender: UIButton){
         performSegue(withIdentifier: "productAddedToCart", sender: self)
     }
     override func viewDidLoad() {
         super.viewDidLoad()
-
         // Do any additional setup after loading the view.
     }
     
     override func viewWillAppear(_ animated: Bool) {
-        
+        super.viewWillAppear(animated)
+        productName.text = self.barcodeString
     }
 
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
+    }
+    
+    func getProductData(_ barcodeString: String){
+        
     }
     
 
