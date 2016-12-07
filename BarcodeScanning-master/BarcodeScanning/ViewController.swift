@@ -8,6 +8,7 @@
 
 import UIKit
 import AVFoundation
+import SlideMenuControllerSwift
 
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
 {
@@ -117,6 +118,20 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             let destinationViewController = segue.destination as! ProductViewController
             destinationViewController.barcodeString = self.lblDataInfo.text!
         }
+    }
+    
+    class ContainerViewController: SlideMenuController {
+        
+        override func awakeFromNib() {
+            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "Main") {
+                self.mainViewController = controller
+            }
+            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "Left") {
+                self.leftViewController = controller
+            }
+            super.awakeFromNib()
+        }
+        
     }
 
 }
