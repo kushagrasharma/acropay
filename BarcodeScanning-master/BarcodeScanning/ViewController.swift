@@ -94,7 +94,13 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     {
         let metadata = AVCaptureMetadataOutput()
         self.captureSession.addOutput(metadata)
-        metadata.metadataObjectTypes = metadata.availableMetadataObjectTypes
+        metadata.metadataObjectTypes = [AVMetadataObjectTypeUPCECode,
+                                        AVMetadataObjectTypeCode39Code,
+                                        AVMetadataObjectTypeEAN13Code,
+                                        AVMetadataObjectTypeEAN8Code,
+                                        AVMetadataObjectTypeCode93Code,
+                                        AVMetadataObjectTypeCode128Code,
+                                        AVMetadataObjectTypeCode39Mod43Code]
         metadata.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
     }
     
@@ -132,6 +138,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         // If barcode has been scanned and segueing to product page
         self.captureSession.stopRunning()
         if segue.identifier == "barcodeScannedSegue"{
+            print(self.barcode!)
             let destinationViewController = segue.destination as! ProductViewController
             destinationViewController.product = Product(serialNumber:self.barcode!)
         }
