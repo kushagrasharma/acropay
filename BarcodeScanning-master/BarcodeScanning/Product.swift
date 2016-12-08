@@ -18,13 +18,17 @@ class Product: NSObject{
     var productDescription: String?
     var quantity:Int
     let dateCreated: Date
-    private var user = "client"
-    private var password = "cs50final123"
+    
     
     init(name: String = "Oreos", serialNumber: String = "0044000007492", valueInDollars: Double = 2.75, quantity: Int = 1) {
+        let user = "admin"
+        let password = "secret"
+        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
+        let base64Credentials = credentialData.base64EncodedString()
+        let headers = ["Authorization": "Basic \(base64Credentials)"]
+        print(headers)
         var json:JSON?
-        Alamofire.request("http://acropay.io/products/\(serialNumber)")
-            .authenticate(user: self.user, password: self.password)
+        Alamofire.request("http://acropay.io/products/\(serialNumber)\(user)/\(password)", headers: headers)
             .responseJSON { response in
                 if response.result.value != nil{
                     json = JSON(response.result.value!)
