@@ -93,15 +93,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        if (cartProducts != nil) {
-            return cartProducts!.allKeys.count
-        }
-        
-        
-        return 0
+        return self.productStore.allProducts.count
         
     }
-    
+    // next func to change
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CART_CELL_REUSE_IDENTIFIER, for: indexPath) as! CartTableViewCell
         

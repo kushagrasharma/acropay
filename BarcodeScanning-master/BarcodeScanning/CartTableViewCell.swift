@@ -50,11 +50,11 @@ class CartTableViewCell: UITableViewCell {
         // Configure the view for the selected state
     }
     
-    func setItemDictionary(_ itemDict: NSDictionary) {
+    func setItemDictionary(_ itemDict: Product) {
         
-        itemTitleLabel?.text = itemDict.value(forKey: "title") as? String
+        itemTitleLabel?.text = itemDict.name
         
-        itemPriceLabel?.text = itemDict.value(forKeyPath: "totals.post_discount.formatted.with_tax") as? String
+        itemPriceLabel?.text = String(itemDict.priceInDollars)
         
         if let qty:NSNumber = itemDict.value(forKeyPath: "quantity") as? NSNumber {
             _ = "Qty. \(qty.intValue)"

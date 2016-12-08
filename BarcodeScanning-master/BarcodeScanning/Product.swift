@@ -14,13 +14,15 @@ class Product: NSObject{
     var barcodeNumber: String
     var images = [UIImage?]()
     var productDescription: String?
+    var quantity:Int
     let dateCreated: Date
     
-    init(name: String = "Oreos", serialNumber: String = "0044000007492", valueInDollars: Double = 2.75) {
+    init(name: String = "Oreos", serialNumber: String = "0044000007492", valueInDollars: Double = 2.75, quantity: Int = 1) {
         self.name = name
         self.priceInDollars = round(100*valueInDollars)/100
         self.barcodeNumber = serialNumber
         self.dateCreated = Date()
+        self.quantity = quantity
         
         super.init()
     }
