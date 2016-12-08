@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2657" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fb1-gY-r9Y">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="11542" systemVersion="16B2555" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" colorMatched="YES" initialViewController="fb1-gY-r9Y">
     <device id="retina4_7" orientation="portrait">
         <adaptation id="fullscreen"/>
     </device>
@@ -10,6 +10,34 @@
         <capability name="documents saved in the Xcode 8 format" minToolsVersion="8.0"/>
     </dependencies>
     <scenes>
+        <!--Table View Controller-->
+        <scene sceneID="wHp-xG-wEC">
+            <objects>
+                <tableViewController id="omZ-tO-4yH" sceneMemberID="viewController">
+                    <tableView key="view" clipsSubviews="YES" contentMode="scaleToFill" alwaysBounceVertical="YES" dataMode="prototypes" style="plain" separatorStyle="default" rowHeight="44" sectionHeaderHeight="28" sectionFooterHeight="28" id="tqp-1k-AbK">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <prototypes>
+                            <tableViewCell clipsSubviews="YES" contentMode="scaleToFill" selectionStyle="default" indentationWidth="10" id="ZHN-sI-Uxr">
+                                <rect key="frame" x="0.0" y="28" width="375" height="44"/>
+                                <autoresizingMask key="autoresizingMask"/>
+                                <tableViewCellContentView key="contentView" opaque="NO" clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="center" tableViewCell="ZHN-sI-Uxr" id="Tju-UU-qyT">
+                                    <rect key="frame" x="0.0" y="0.0" width="375" height="43"/>
+                                    <autoresizingMask key="autoresizingMask"/>
+                                </tableViewCellContentView>
+                            </tableViewCell>
+                        </prototypes>
+                        <connections>
+                            <outlet property="dataSource" destination="omZ-tO-4yH" id="Jgw-3G-qel"/>
+                            <outlet property="delegate" destination="omZ-tO-4yH" id="5FS-uq-XWM"/>
+                        </connections>
+                    </tableView>
+                </tableViewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="dc6-1n-Av2" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1130" y="-591"/>
+        </scene>
         <!--View Controller-->
         <scene sceneID="ufC-wZ-h7g">
             <objects>
@@ -44,6 +72,7 @@
                                 <state key="normal" title="View Cart"/>
                                 <connections>
                                     <action selector="showCart:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="iS7-32-wYY"/>
+                                    <segue destination="omZ-tO-4yH" kind="show" id="tN9-aS-zod"/>
                                 </connections>
                             </button>
                         </subviews>
@@ -67,39 +96,11 @@
                         <outlet property="lblDataInfo" destination="7ee-be-eZF" id="fnk-Qd-91s"/>
                         <outlet property="lblDataType" destination="YTE-kW-lGB" id="TwR-gL-EXV"/>
                         <segue destination="efN-DL-r6i" kind="show" identifier="barcodeScannedSegue" id="Tw2-3F-99y"/>
-                        <segue destination="MQt-pa-XIt" kind="show" identifier="showCartSegue" id="9Pb-zS-ENn"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1048.8" y="35.532233883058474"/>
-        </scene>
-        <!--Cart View Controller-->
-        <scene sceneID="J6w-Cp-a7N">
-            <objects>
-                <viewController id="MQt-pa-XIt" customClass="CartViewController" customModule="BarcodeScanning" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="Vyy-Nm-6My"/>
-                        <viewControllerLayoutGuide type="bottom" id="M1X-I2-xVA"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="dkg-U7-adB">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Cart" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="shJ-v5-O6k">
-                                <rect key="frame" x="166" y="212" width="34" height="21"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96156436204910278" green="0.95675712823867798" blue="0.94373130798339844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                    </view>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="cp3-JB-Ozc" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="767" y="-629"/>
         </scene>
         <!--Product View Controller-->
         <scene sceneID="16G-Qx-1Df">
@@ -118,6 +119,7 @@
                                 <state key="normal" title="Add to Cart"/>
                                 <connections>
                                     <action selector="addToCart:" destination="efN-DL-r6i" eventType="touchUpInside" id="aoT-dp-OD1"/>
+                                    <segue destination="omZ-tO-4yH" kind="show" id="PPd-2s-aJb"/>
                                 </connections>
                             </button>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtL-uo-pfT">
@@ -130,7 +132,7 @@
                                 <rect key="frame" x="67" y="95" width="238" height="309"/>
                             </imageView>
                             <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnT-Ut-p9n">
-                                <rect key="frame" x="132.5" y="66" width="110" height="21"/>
+                                <rect key="frame" x="133" y="110" width="110" height="21"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -151,7 +153,6 @@
                     <connections>
                         <outlet property="productName" destination="dnT-Ut-p9n" id="hNi-aS-EkG"/>
                         <outlet property="productPrice" destination="KtL-uo-pfT" id="PRl-4G-Uju"/>
-                        <segue destination="MQt-pa-XIt" kind="show" identifier="productAddedToCart" id="Uet-Gc-gi5"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="VnD-2B-iNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -178,6 +179,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="9Pb-zS-ENn"/>
+        <segue reference="PPd-2s-aJb"/>
     </inferredMetricsTieBreakers>
 </document>
