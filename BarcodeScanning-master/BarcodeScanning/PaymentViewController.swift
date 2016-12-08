@@ -66,9 +66,7 @@ class PaymentViewController: UITableViewController, TextEntryTableViewCellDelega
         for i in shortYearNumber...maxYear {
             let shortYear = NSString(format: "%d", i)
             yearsArray.append(shortYear as String)
-        }
-        
-    }
+        }    }
     
     fileprivate func jumpToCartView(_ presentSuccess: Bool) {
         for controller in self.navigationController!.viewControllers {

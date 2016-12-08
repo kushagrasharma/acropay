@@ -37,7 +37,8 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         super.viewDidAppear(animated)
         self.lblDataInfo.text = nil
         self.lblDataType.text = nil
-        self.setupCaptureSession()
+        SwiftSpinner.show("Loading barcode scanner...")
+        {self.setupCaptureSession()} ~> {SwiftSpinner.hide()};
     }
     
     //MARK: Session Startup
