@@ -47,7 +47,7 @@
                                 </connections>
                             </button>
                         </subviews>
-                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <color key="backgroundColor" red="0.96078431372549022" green="0.95686274509803915" blue="0.94509803921568625" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="fhr-f7-UgC" firstAttribute="centerY" secondItem="kh9-bI-dsS" secondAttribute="centerY" id="1Th-st-dm6"/>
                             <constraint firstItem="fhr-f7-UgC" firstAttribute="height" secondItem="kh9-bI-dsS" secondAttribute="height" multiplier="0.8" id="5Ye-IW-weV"/>
@@ -93,7 +93,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96156436204910278" green="0.95675712823867798" blue="0.94373130798339844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                     </view>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="cp3-JB-Ozc" userLabel="First Responder" sceneMemberID="firstResponder"/>
@@ -135,7 +135,7 @@
                                 <nil key="highlightedColor"/>
                             </label>
                         </subviews>
-                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <color key="backgroundColor" red="0.96156436204910278" green="0.95675712823867798" blue="0.94373130798339844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
                         <constraints>
                             <constraint firstItem="7IB-2u-UBM" firstAttribute="centerX" secondItem="2Ps-Dt-VuM" secondAttribute="centerX" id="5pf-18-oWm"/>
                             <constraint firstItem="dnT-Ut-p9n" firstAttribute="centerX" secondItem="2Ps-Dt-VuM" secondAttribute="centerX" id="Kzm-Ts-JYv"/>
@@ -159,6 +159,6 @@
         </scene>
     </scenes>
     <inferredMetricsTieBreakers>
-        <segue reference="Uet-Gc-gi5"/>
+        <segue reference="9Pb-zS-ENn"/>
     </inferredMetricsTieBreakers>
 </document>
