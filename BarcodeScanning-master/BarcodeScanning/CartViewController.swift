@@ -44,15 +44,11 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func refreshCart() {
-        SwiftSpinner.show("Updating cart")
-        
         // Reset cart total
         self.totalLabel?.text = "$" + String(format: "%.2f", self.productStore!.priceSum())
         // And reload table of cart items...
         self.tableView?.reloadData()
 
-        // Hide loading UI
-        SwiftSpinner.hide()
         // Disable checkout button if no items in cart
         self.checkoutButton?.isEnabled = self.productStore!.allProducts.count > 0
         
@@ -121,13 +117,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         // If quantity = 0, remove item
         
         // Loading UI..
-        SwiftSpinner.show("Updating quantity")
-        
         self.productStore!.setQuantityWithCode(cell.productId!, quantity)
         
         self.refreshCart()
         
-        SwiftSpinner.hide()
         
     }
     

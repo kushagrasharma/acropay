@@ -15,6 +15,8 @@ PODS:
   - AFNetworking/UIKit (3.1.0):
     - AFNetworking/NSURLSession
   - Alamofire (4.2.0)
+  - Alamofire-Synchronous (4.0.0):
+    - Alamofire (~> 4.0)
   - Moltin (1.1.5):
     - AFNetworking
   - SDWebImage (3.8.2):
@@ -26,6 +28,7 @@ PODS:
 
 DEPENDENCIES:
   - Alamofire
+  - Alamofire-Synchronous (~> 4.0)
   - Moltin (from `https://github.com/moltin/ios-sdk.git`, branch `master`)
   - SDWebImage (~> 3.7)
   - SlideMenuControllerSwift
@@ -50,12 +53,13 @@ CHECKOUT OPTIONS:
 SPEC CHECKSUMS:
   AFNetworking: 5e0e199f73d8626b11e79750991f5d173d1f8b67
   Alamofire: aa2e09d871c9160ac53c90e83c68064a94e3dfbe
+  Alamofire-Synchronous: eedf1e6e961c3795a63c74990b3f7d9fbfac7e50
   Moltin: 80fe95499216cf783c183bc56352b6b92a3e4836
   SDWebImage: 098e97e6176540799c27e804c96653ee0833d13c
   SlideMenuControllerSwift: 9a163b16d54afab734add42858cba7ef7c307755
   Stripe: a47770e82db059d0e7e160f9aabc2997055ee911
   SwiftyJSON: b37a26c0a27587f13e8f223e0280e69c3be5d1d4
 
-PODFILE CHECKSUM: ca4c91331344092c1a80105aa80501571538176d
+PODFILE CHECKSUM: 3539550fb88c5de0c8039cc42ce7db31bccd1554
 
 COCOAPODS: 1.1.1

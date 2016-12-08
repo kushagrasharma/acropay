@@ -9,48 +9,32 @@
 import UIKit
 import Alamofire
 import SwiftyJSON
+import Alamofire_Synchronous
 
 class Product: NSObject{
-    var name: String
-    var priceInDollars: Double
+    var name: String = "Oreo's"
+    var priceInDollars: Double = 10
     var barcodeNumber: String
-    var images = [UIImage?]()
+    var images = [String?]()
     var productDescription: String?
     var quantity:Int
-    let dateCreated: Date
+    let dateCreated:Date
     
     
-    init(name: String = "Oreos", serialNumber: String = "0044000007492", valueInDollars: Double = 2.75, quantity: Int = 1) {
-        let user = "admin"
-        let password = "secret"
-        let credentialData = "\(user):\(password)".data(using: String.Encoding.utf8)!
-        let base64Credentials = credentialData.base64EncodedString()
-        let headers = ["Authorization": "Basic \(base64Credentials)"]
-        print(headers)
-        var json:JSON?
-        Alamofire.request("http://acropay.io/products/\(serialNumber)\(user)/\(password)", headers: headers)
-            .responseJSON { response in
-                if response.result.value != nil{
-                    json = JSON(response.result.value!)
-                    print(response.result.value!)
-                }
-        }
+    init(serialNumber: String) {
         self.barcodeNumber = serialNumber
         self.quantity = 1
-        if let JSONData = json{
-            self.name = JSONData["name"].string!
-            self.priceInDollars = round(100*JSONData["price"].double!)/100
-            self.dateCreated = Date()
-            
-        }
-        else{
-            self.name = name
-            self.priceInDollars = round(100*valueInDollars)/100
-            self.dateCreated = Date()
-            
+        self.dateCreated = Date()
+        let response = Alamofire.request("http://acropay.io/products/\(serialNumber)")
+            .responseJSON()
+        if let json = JSON(response.result.value){
+            self.name = (json["name"].string!)
+            self.priceInDollars = round(100*(json["price"].double!))/100
+            self.images = json["images"].arrayValue.map { $0.string!}
         }
         super.init()
     }
+    
     
     func stringDescription() -> String{
         return "Name: \(name), price \(priceInDollars)"
