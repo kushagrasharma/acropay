@@ -6,4 +6,5 @@ target 'BarcodeScanning' do
   pod 'Moltin', :git => 'https://github.com/moltin/ios-sdk.git', :branch => 'master'
   pod 'SDWebImage', '~>3.7'
   pod 'SlideMenuControllerSwift'
+  pod 'Stripe'
 end

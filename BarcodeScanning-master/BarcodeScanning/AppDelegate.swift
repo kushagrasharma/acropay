@@ -8,17 +8,22 @@
 
 import UIKit
 import SlideMenuControllerSwift
+import Stripe
 
 let MOLTIN_COLOR = UIColor(red: (139.0/255.0), green: (98.0/255.0), blue: (181.0/255.0), alpha: 1.0)
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    STPPaymentConfiguration.shared().appleMerchantIdentifier = "your apple merchant identifier"
+    
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // create viewController code...
+        
+         STPPaymentConfiguration.shared().publishableKey = "pk_test_lttP2oCNWtN1FTKiQMyBpS7M"
         
 //        let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
 //        self.window?.rootViewController = slideMenuController
