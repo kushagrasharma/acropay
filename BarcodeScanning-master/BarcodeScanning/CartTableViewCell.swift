@@ -1,10 +1,10 @@
 //
 //  CartTableViewCell.swift
-//  MoltinSwiftExample
+//  Acropay
 //
-//  Created by Dylan McKee on 16/08/2015.
-//  Copyright (c) 2015 Moltin. All rights reserved.
-//
+//  Created by Kushagra Sharma on 12/8/16
+//  Copyright (c) 2016 Acropay. All rights reserved.
+//  Adapted from https://github.com/moltin/ios-swift-example
 
 import UIKit
 
@@ -56,23 +56,14 @@ class CartTableViewCell: UITableViewCell {
         
         itemPriceLabel?.text = String(itemDict.priceInDollars)
         
-        if let qty:NSNumber = itemDict.value(forKeyPath: "quantity") as? NSNumber {
-            _ = "Qty. \(qty.intValue)"
-            self.itemQuantityStepper?.value = qty.doubleValue
-        }
+        let qty:NSNumber = itemDict.quantity as NSNumber
+        _ = "Qty. \(qty.intValue)"
+        self.itemQuantityStepper?.value = qty.doubleValue
         
+        if itemDict.images.count > 0{
+            itemImageView?.image = itemDict.images[0]
+        }
 
-        
-        var imageUrl = ""
-        
-        if let images = itemDict.object(forKey: "images") as? NSArray {
-            if (images.firstObject != nil) {
-                imageUrl = (images.firstObject as! NSDictionary).value(forKeyPath: "url.https") as! String
-            }
-            
-        }
-        
-        itemImageView?.sd_setImage(with: URL(string: imageUrl))
     }
     
     @IBAction func stepperValueChanged(_ sender: AnyObject){

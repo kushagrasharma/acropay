@@ -96,13 +96,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         return self.productStore.allProducts.count
         
     }
-    // next func to change
+    
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: CART_CELL_REUSE_IDENTIFIER, for: indexPath) as! CartTableViewCell
         
         let row = (indexPath as NSIndexPath).row
         
-        let product:NSDictionary = cartProducts!.allValues[row] as! NSDictionary
+        let product:Product = productStore.allProducts[row]
         
         cell.setItemDictionary(product)
         
