@@ -56,6 +56,8 @@ class CartTableViewCell: UITableViewCell {
         
         itemPriceLabel?.text = String(itemDict.priceInDollars)
         
+        self.productId = itemDict.barcodeNumber
+        
         let qty:NSNumber = itemDict.quantity as NSNumber
         _ = "Qty. \(qty.intValue)"
         self.itemQuantityStepper?.value = qty.doubleValue
