@@ -7,7 +7,6 @@
 //
 
 import UIKit
-import SlideMenuControllerSwift
 
 @UIApplicationMain
 class AppDelegate: UIResponder, UIApplicationDelegate {
@@ -41,30 +40,6 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Called when the application is about to terminate. Save data if appropriate. See also applicationDidEnterBackground:.
     }
     
-    class ContainerViewController: SlideMenuController {
-        
-        override func awakeFromNib() {
-            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "Main") {
-                self.mainViewController = controller
-            }
-            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "Left") {
-                self.leftViewController = controller
-            }
-            super.awakeFromNib()
-        }
-        
-    }
-    
-    func application(application: UIApplication, didFinishLaunchingWithOptions launchOptions: [NSObject: AnyObject]?) -> Bool {
-        
-        // create viewController code...
-        
-        let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
-        self.window?.rootViewController = slideMenuController
-        self.window?.makeKeyAndVisible()
-        
-        return true
-    }
     
     
 

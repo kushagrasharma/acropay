@@ -2,8 +2,8 @@
 //  ViewController.swift
 //  BarcodeScanning
 //
-//  Created by Jordan Morgan on 5/16/15.
-//  Copyright (c) 2015 Jordan Morgan. All rights reserved.
+//  Created by Acropay in 12/16
+//  Copyright (c) 2016 Acropay. All rights reserved.
 //
 
 import UIKit
@@ -27,15 +27,35 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         super.viewDidLoad()
     }
     
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+//        self.setupCaptureSession()
+    }
+    
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
+        self.lblDataInfo.text = nil
+        self.lblDataType.text = nil
         self.setupCaptureSession()
     }
     
     //MARK: Session Startup
     fileprivate func setupCaptureSession()
     {
+        if let inputs = captureSession.inputs as? [AVCaptureDeviceInput] {
+            for input in inputs {
+                captureSession.removeInput(input)
+            }
+        }
+        if let outputs = captureSession.outputs as? [AVCaptureOutput]{
+            for output in outputs {
+                captureSession.removeOutput(output)
+            }
+        }
+        if self.captureSession.isRunning{
+            self.captureSession.stopRunning()
+        }
         self.captureDevice = AVCaptureDevice.defaultDevice(withMediaType: AVMediaTypeVideo)
         do{
             let deviceInput = try AVCaptureDeviceInput(device: self.captureDevice) as AVCaptureDeviceInput?
@@ -80,18 +100,18 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         metadata.setMetadataObjectsDelegate(self, queue: DispatchQueue.main)
     }
     
-    //MARK: Delegate Methods
+    //MARK: AV Delegate Methods
     func captureOutput(_ captureOutput: AVCaptureOutput!, didOutputMetadataObjects metadataObjects: [Any]!, from connection: AVCaptureConnection!)
     {
-        for metaData in metadataObjects
-        {
+        if metadataObjects.count > 0{
+            let metaData = metadataObjects[0]
             let decodedData:AVMetadataMachineReadableCodeObject = metaData as! AVMetadataMachineReadableCodeObject
             self.lblDataInfo.text = decodedData.stringValue
             self.lblDataType.text = decodedData.type
             performSegue(withIdentifier: "barcodeScannedSegue", sender: self)
-            break
         }
     }
+    
     
     //MARK: IBAction Functions
     
@@ -113,25 +133,13 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // If barcode has been scanned and segueing to product page
+        self.captureSession.stopRunning()
         if segue.identifier == "barcodeScannedSegue"{
             let destinationViewController = segue.destination as! ProductViewController
             destinationViewController.barcodeString = self.lblDataInfo.text!
         }
     }
     
-    class ContainerViewController: SlideMenuController {
-        
-        override func awakeFromNib() {
-            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "Main") {
-                self.mainViewController = controller
-            }
-            if let controller = self.storyboard?.instantiateViewController(withIdentifier: "Left") {
-                self.leftViewController = controller
-            }
-            super.awakeFromNib()
-        }
-        
-    }
 
 }
 
