@@ -12,7 +12,6 @@ schema = {
 people = {
     'schema': schema
 }
-MONGO_DBNAME = 'products'
 DOMAIN = {
     'products': people,
 }
