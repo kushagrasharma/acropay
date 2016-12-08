@@ -8,7 +8,7 @@
 
 import UIKit
 
-class Item: NSObject {
+class Product: NSObject {
     var name: String
     var priceInDollars: Double
     var barcodeNumber: String
