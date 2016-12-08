@@ -51,5 +51,6 @@ class Product: NSObject{
                  .responseJSON { response in
             json = response.result.value
         }
+        return JSON
     }
 }
