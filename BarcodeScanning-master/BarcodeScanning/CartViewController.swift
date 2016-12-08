@@ -20,6 +20,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     fileprivate var cartData:NSDictionary?
     fileprivate var cartProducts:NSDictionary?
     
+    var productStore: ProductStore?
+    
     fileprivate let BILLING_ADDRESS_SEGUE_IDENTIFIER = "showBillingAddress"
     
     override func viewDidLoad() {
