@@ -4,4 +4,5 @@ use_frameworks!
 target 'BarcodeScanning' do
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
   pod 'SlideMenuControllerSwift'
+  pod 'Moltin', :git => 'https://github.com/moltin/ios-sdk.git', :branch => 'master'
 end

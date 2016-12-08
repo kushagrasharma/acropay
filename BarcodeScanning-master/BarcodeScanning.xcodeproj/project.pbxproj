@@ -13,6 +13,9 @@
 		339379A71B080C0A003A722D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339379A61B080C0A003A722D /* Images.xcassets */; };
 		339379AA1B080C0A003A722D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339379A81B080C0A003A722D /* LaunchScreen.xib */; };
 		339379B61B080C0A003A722D /* BarcodeScanningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339379B51B080C0A003A722D /* BarcodeScanningTests.swift */; };
+		3AE2C4E01DF90AAB0081F19E /* AddressEntryTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2C4DF1DF90AAB0081F19E /* AddressEntryTableViewController.swift */; };
+		3AE2C4E21DF90B980081F19E /* ShippingTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2C4E11DF90B980081F19E /* ShippingTableViewController.swift */; };
+		3AE2C4E41DF90BF60081F19E /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2C4E31DF90BF60081F19E /* PaymentViewController.swift */; };
 		B12E7AD51DF66D2E0072B31D /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E7AD31DF66D2E0072B31D /* ProductViewController.swift */; };
 		B12E7AD61DF66D2E0072B31D /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12E7AD41DF66D2E0072B31D /* ProductViewController.xib */; };
 		B17648D11DF658C2007A4F84 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17648CF1DF658C2007A4F84 /* CartViewController.swift */; };
@@ -44,6 +47,9 @@
 		339379AF1B080C0A003A722D /* BarcodeScanningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarcodeScanningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		339379B41B080C0A003A722D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		339379B51B080C0A003A722D /* BarcodeScanningTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BarcodeScanningTests.swift; sourceTree = "<group>"; };
+		3AE2C4DF1DF90AAB0081F19E /* AddressEntryTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AddressEntryTableViewController.swift; sourceTree = "<group>"; };
+		3AE2C4E11DF90B980081F19E /* ShippingTableViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ShippingTableViewController.swift; sourceTree = "<group>"; };
+		3AE2C4E31DF90BF60081F19E /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		B12E7AD31DF66D2E0072B31D /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		B12E7AD41DF66D2E0072B31D /* ProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
 		B17648CF1DF658C2007A4F84 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
@@ -98,6 +104,9 @@
 				339379A11B080C0A003A722D /* ViewController.swift */,
 				339379A31B080C0A003A722D /* Main.storyboard */,
 				B17648CF1DF658C2007A4F84 /* CartViewController.swift */,
+				3AE2C4DF1DF90AAB0081F19E /* AddressEntryTableViewController.swift */,
+				3AE2C4E11DF90B980081F19E /* ShippingTableViewController.swift */,
+				3AE2C4E31DF90BF60081F19E /* PaymentViewController.swift */,
 				B17648D01DF658C2007A4F84 /* CartViewController.xib */,
 				B12E7AD31DF66D2E0072B31D /* ProductViewController.swift */,
 				B12E7AD41DF66D2E0072B31D /* ProductViewController.xib */,
@@ -311,9 +320,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3AE2C4E41DF90BF60081F19E /* PaymentViewController.swift in Sources */,
 				339379A21B080C0A003A722D /* ViewController.swift in Sources */,
 				B17648D11DF658C2007A4F84 /* CartViewController.swift in Sources */,
 				B12E7AD51DF66D2E0072B31D /* ProductViewController.swift in Sources */,
+				3AE2C4E21DF90B980081F19E /* ShippingTableViewController.swift in Sources */,
+				3AE2C4E01DF90AAB0081F19E /* AddressEntryTableViewController.swift in Sources */,
 				339379A01B080C0A003A722D /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
