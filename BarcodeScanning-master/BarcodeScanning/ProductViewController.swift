@@ -48,7 +48,7 @@ class ProductViewController: UIViewController {
         // Product has been added to cart
         if segue.identifier == "productAddedToCart"{
             let destinationViewController = segue.destination as! CartViewController
-            destinationViewController.product = self.product!
+            destinationViewController.productStore.addProduct(self.product!)
         }
     }
     

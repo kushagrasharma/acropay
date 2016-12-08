@@ -150,6 +150,7 @@
 		3393799D1B080C0A003A722D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				3AE2C4EB1DF92C010081F19E /* ProductStore.swift */,
 				3AE2C4E91DF91BC90081F19E /* Product.swift */,
 				B164CB941DF919990053FDA4 /* AlertDialog.swift */,
 				B164CB951DF919990053FDA4 /* String+Numeric.swift */,
@@ -188,7 +189,6 @@
 				B164CB881DF918820053FDA4 /* ContinueButtonTableViewCell.swift */,
 				B164CB891DF918820053FDA4 /* SwitchTableViewCell.swift */,
 				B164CB8A1DF918820053FDA4 /* DataEntryTextField.swift */,
-				3AE2C4EB1DF92C010081F19E /* ProductStore.swift */,
 			);
 			name = "Table Cells";
 			sourceTree = "<group>";

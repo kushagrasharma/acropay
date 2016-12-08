@@ -12,11 +12,9 @@ class ProductStore {
     
     var allProducts = [Product]()
     
-    @discardableResult func createProduct() -> Product {
-        let newProduct = Product()
+    func addProduct(_ product: Product){
         
-        self.allProducts.append(newProduct)
+        self.allProducts.append(product)
         
-        return newProduct
     }
 }
