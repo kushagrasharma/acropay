@@ -29,7 +29,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
         SwiftSpinner.show("Loading barcode scanner...")
-//        self.setupCaptureSession()
     }
     
     override func viewDidAppear(_ animated: Bool)
@@ -134,7 +133,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         self.captureSession.stopRunning()
         if segue.identifier == "barcodeScannedSegue"{
             let destinationViewController = segue.destination as! ProductViewController
-            destinationViewController.barcodeString = self.barcode!
+            destinationViewController.product = Product(serialNumber:self.barcode!)
         }
     }
     

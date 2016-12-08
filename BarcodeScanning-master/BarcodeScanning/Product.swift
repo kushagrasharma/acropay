@@ -8,11 +8,12 @@
 
 import UIKit
 
-class Product: NSObject {
+class Product: NSObject{
     var name: String
     var priceInDollars: Double
     var barcodeNumber: String
-    var image: UIImage?
+    var images = [UIImage?]()
+    var productDescription: String?
     let dateCreated: Date
     
     init(name: String = "Oreos", serialNumber: String = "0044000007492", valueInDollars: Double = 2.75) {

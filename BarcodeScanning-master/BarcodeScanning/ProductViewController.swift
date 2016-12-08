@@ -6,45 +6,52 @@
 //  Copyright © 2016 Acropay. All rights reserved.
 //
 
-import UIKit
-import SwiftyJSON
 
-class  ProductViewController: UIViewController {
-    var barcodeString:String = ""
-    @IBOutlet var productName : UILabel!
-    @IBOutlet var productPrice : UILabel!
+import UIKit
+import Moltin
+
+class ProductViewController: UIViewController {
     
-    @IBAction func addToCart(_ sender: UIButton){
-        performSegue(withIdentifier: "productAddedToCart", sender: self)
-    }
+    var product:Product?
+    
+    @IBOutlet weak var descriptionTextView:UITextView?
+    @IBOutlet weak var productImageView:UIImageView?
+    @IBOutlet weak var buyButton:UIButton?
+    
     override func viewDidLoad() {
         super.viewDidLoad()
+        
+        buyButton?.backgroundColor = MOLTIN_COLOR
+        
         // Do any additional setup after loading the view.
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        productName.text = self.barcodeString
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
-    
-    func getProductData(_ barcodeString: String){
+        if let description = product!.productDescription! as String? {
+            self.descriptionTextView?.text = description
+            
+        }
+        
+        let buyButtonTitle = "Buy Now $\(product!.priceInDollars)"
+        self.buyButton?.setTitle(buyButtonTitle, for: UIControlState())
+        
+        productImageView?.image = product!.images[0]
+        
         
     }
     
-
-    /*
-    // MARK: - Navigation
-
-    // In a storyboard-based application, you will often want to do a little preparation before navigation
-    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
-        // Get the new view controller using segue.destinationViewController.
-        // Pass the selected object to the new view controller.
+    @IBAction func buyProduct(_ sender: AnyObject) {
+        // Add the current product to the cart
+        
+        performSegue(withIdentifier: "productAddedToCart", sender: self)
+        
     }
-    */
-
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // Product has been added to cart
+        if segue.identifier == "productAddedToCart"{
+            let destinationViewController = segue.destination as! CartViewController
+            destinationViewController.product = self.product!
+        }
+    }
+    
+    
+    
 }
