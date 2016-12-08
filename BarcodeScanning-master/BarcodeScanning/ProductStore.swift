@@ -33,6 +33,9 @@ class ProductStore {
         if newQuantity < 1{
             allProducts.remove(at: index)
         }
+        else{
+            allProducts[index].quantity = newQuantity
+        }
     }
     
     func priceSum() -> Double{
