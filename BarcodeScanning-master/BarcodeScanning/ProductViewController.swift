@@ -30,7 +30,7 @@ class ProductViewController: UIViewController {
             
         }
         
-        let buyButtonTitle = "Buy Now $\(product!.priceInDollars)"
+        let buyButtonTitle = "Buy Now $" + String(format: "%.2f", product!.priceInDollars)
         self.buyButton?.setTitle(buyButtonTitle, for: UIControlState())
         if product!.images.count > 0{
             productImageView?.image = product!.images[0]

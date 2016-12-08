@@ -46,7 +46,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     func refreshCart() {
         SwiftSpinner.show("Updating cart")
         // Reset cart total
-        self.totalLabel?.text = "$" + String(self.productStore!.priceSum())
+        self.totalLabel?.text = "$" + String(format: "%.2f", self.productStore!.priceSum())
         // And reload table of cart items...
         self.tableView?.reloadData()
         // Hide loading UI
@@ -130,7 +130,9 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     // MARK: - Checkout button
     @IBAction func checkoutButtonClicked(_ sender: AnyObject) {
-        performSegue(withIdentifier: BILLING_ADDRESS_SEGUE_IDENTIFIER, sender: self)
+        let checkoutViewController = CheckoutViewController(price: Int(100*self.productStore!.priceSum()),
+                                                            settings: SettingsViewController().settings)
+        self.navigationController?.pushViewController(checkoutViewController, animated: true)
     }
     
 }
