@@ -1,7 +1,7 @@
 schema = {
     'price': {
         'type': 'integer'
-        'required': True,
+        'required': True
     },
     'name': {
         'type': 'string',
