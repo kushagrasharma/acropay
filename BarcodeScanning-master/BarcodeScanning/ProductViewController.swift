@@ -24,15 +24,16 @@ class ProductViewController: UIViewController {
         buyButton?.backgroundColor = MOLTIN_COLOR
         
         // Do any additional setup after loading the view.
-        if let description = product!.productDescription! as String? {
+        if let description = product!.productDescription as String? {
             self.descriptionTextView?.text = description
             
         }
         
         let buyButtonTitle = "Buy Now $\(product!.priceInDollars)"
         self.buyButton?.setTitle(buyButtonTitle, for: UIControlState())
-        
-        productImageView?.image = product!.images[0]
+        if product!.images.count > 0{
+            productImageView?.image = product!.images[0]
+        }
         
         
     }

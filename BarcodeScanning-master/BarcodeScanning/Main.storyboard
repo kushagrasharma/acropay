@@ -598,10 +598,10 @@
             </objects>
             <point key="canvasLocation" x="3884" y="-176"/>
         </scene>
-        <!--Product Detail View Controller-->
+        <!--Product View Controller-->
         <scene sceneID="G0E-Gr-FJS">
             <objects>
-                <viewController id="6Pl-jU-BGN" customClass="ProductDetailViewController" customModule="BarcodeScanning" customModuleProvider="target" sceneMemberID="viewController">
+                <viewController id="6Pl-jU-BGN" customClass="ProductViewController" customModule="BarcodeScanning" customModuleProvider="target" sceneMemberID="viewController">
                     <layoutGuides>
                         <viewControllerLayoutGuide type="top" id="eTG-vB-wbf"/>
                         <viewControllerLayoutGuide type="bottom" id="VcA-EW-LBW"/>
