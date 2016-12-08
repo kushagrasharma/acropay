@@ -13,13 +13,12 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
 {
 
     @IBOutlet weak var cameraView: UIView!
-    @IBOutlet weak var lblDataType: UILabel!
-    @IBOutlet weak var lblDataInfo: UILabel!
     
     //MARK: Properties
     let captureSession = AVCaptureSession()
     var captureDevice:AVCaptureDevice?
     var captureLayer:AVCaptureVideoPreviewLayer?
+    var barcode:String?
     
     //MARK: View lifecycle
     override func viewDidLoad()
@@ -29,16 +28,15 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        SwiftSpinner.show("Loading barcode scanner...")
 //        self.setupCaptureSession()
     }
     
     override func viewDidAppear(_ animated: Bool)
     {
         super.viewDidAppear(animated)
-        self.lblDataInfo.text = nil
-        self.lblDataType.text = nil
-        SwiftSpinner.show("Loading barcode scanner...")
-        {self.setupCaptureSession()} ~> {SwiftSpinner.hide()};
+        self.setupCaptureSession()
+        SwiftSpinner.hide()
     }
     
     //MARK: Session Startup
@@ -107,8 +105,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         if metadataObjects.count > 0{
             let metaData = metadataObjects[0]
             let decodedData:AVMetadataMachineReadableCodeObject = metaData as! AVMetadataMachineReadableCodeObject
-            self.lblDataInfo.text = decodedData.stringValue
-            self.lblDataType.text = decodedData.type
+            self.barcode = decodedData.stringValue
             performSegue(withIdentifier: "barcodeScannedSegue", sender: self)
         }
     }
@@ -117,7 +114,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     //MARK: IBAction Functions
     
     @IBAction func showCart(_ sender: UIButton){
-        performSegue(withIdentifier: "showCartSegue", sender: self)
+        performSegue(withIdentifier: "showCart", sender: self)
     }
     
     //MARK: Utility Functions
@@ -137,7 +134,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         self.captureSession.stopRunning()
         if segue.identifier == "barcodeScannedSegue"{
             let destinationViewController = segue.destination as! ProductViewController
-            destinationViewController.barcodeString = self.lblDataInfo.text!
+            destinationViewController.barcodeString = self.barcode!
         }
     }
     

@@ -9,7 +9,6 @@
 /* Begin PBXBuildFile section */
 		339379A01B080C0A003A722D /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3393799F1B080C0A003A722D /* AppDelegate.swift */; };
 		339379A21B080C0A003A722D /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339379A11B080C0A003A722D /* ViewController.swift */; };
-		339379A51B080C0A003A722D /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 339379A31B080C0A003A722D /* Main.storyboard */; };
 		339379A71B080C0A003A722D /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 339379A61B080C0A003A722D /* Images.xcassets */; };
 		339379AA1B080C0A003A722D /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 339379A81B080C0A003A722D /* LaunchScreen.xib */; };
 		339379B61B080C0A003A722D /* BarcodeScanningTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 339379B51B080C0A003A722D /* BarcodeScanningTests.swift */; };
@@ -30,7 +29,7 @@
 		B164CB931DF918820053FDA4 /* DataEntryTextField.swift in Sources */ = {isa = PBXBuildFile; fileRef = B164CB8A1DF918820053FDA4 /* DataEntryTextField.swift */; };
 		B164CB961DF919990053FDA4 /* AlertDialog.swift in Sources */ = {isa = PBXBuildFile; fileRef = B164CB941DF919990053FDA4 /* AlertDialog.swift */; };
 		B164CB971DF919990053FDA4 /* String+Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = B164CB951DF919990053FDA4 /* String+Numeric.swift */; };
-		B164CB991DF91AB20053FDA4 /* Threading.swift in Sources */ = {isa = PBXBuildFile; fileRef = B164CB981DF91AB20053FDA4 /* Threading.swift */; };
+		B164CB9B1DF922380053FDA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B164CB9A1DF922380053FDA4 /* Main.storyboard */; };
 		B17648D11DF658C2007A4F84 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17648CF1DF658C2007A4F84 /* CartViewController.swift */; };
 		B17648D21DF658C2007A4F84 /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17648D01DF658C2007A4F84 /* CartViewController.xib */; };
 		B1D098F41DF7904C007EDA01 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B1D098F31DF7904C007EDA01 /* Podfile */; };
@@ -54,7 +53,6 @@
 		3393799E1B080C0A003A722D /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3393799F1B080C0A003A722D /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		339379A11B080C0A003A722D /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
-		339379A41B080C0A003A722D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
 		339379A61B080C0A003A722D /* Images.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Images.xcassets; sourceTree = "<group>"; };
 		339379A91B080C0A003A722D /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.xib; name = Base; path = Base.lproj/LaunchScreen.xib; sourceTree = "<group>"; };
 		339379AF1B080C0A003A722D /* BarcodeScanningTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BarcodeScanningTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -77,7 +75,7 @@
 		B164CB8A1DF918820053FDA4 /* DataEntryTextField.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataEntryTextField.swift; sourceTree = "<group>"; };
 		B164CB941DF919990053FDA4 /* AlertDialog.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = AlertDialog.swift; sourceTree = "<group>"; };
 		B164CB951DF919990053FDA4 /* String+Numeric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Numeric.swift"; sourceTree = "<group>"; };
-		B164CB981DF91AB20053FDA4 /* Threading.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Threading.swift; sourceTree = "<group>"; };
+		B164CB9A1DF922380053FDA4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B17648CF1DF658C2007A4F84 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		B17648D01DF658C2007A4F84 /* CartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
 		B1D098F31DF7904C007EDA01 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -129,10 +127,10 @@
 				B164CB811DF9186B0053FDA4 /* Table Cells */,
 				3393799F1B080C0A003A722D /* AppDelegate.swift */,
 				339379A11B080C0A003A722D /* ViewController.swift */,
-				339379A31B080C0A003A722D /* Main.storyboard */,
 				B17648CF1DF658C2007A4F84 /* CartViewController.swift */,
 				B17648D01DF658C2007A4F84 /* CartViewController.xib */,
 				3AE2C4DF1DF90AAB0081F19E /* AddressEntryTableViewController.swift */,
+				B164CB9A1DF922380053FDA4 /* Main.storyboard */,
 				3AE2C4E11DF90B980081F19E /* ShippingTableViewController.swift */,
 				3AE2C4E31DF90BF60081F19E /* PaymentViewController.swift */,
 				B12E7AD31DF66D2E0072B31D /* ProductViewController.swift */,
@@ -148,7 +146,6 @@
 		3393799D1B080C0A003A722D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
-				B164CB981DF91AB20053FDA4 /* Threading.swift */,
 				B164CB941DF919990053FDA4 /* AlertDialog.swift */,
 				B164CB951DF919990053FDA4 /* String+Numeric.swift */,
 				B164CB7F1DF9178F0053FDA4 /* SwiftSpinner.swift */,
@@ -298,8 +295,8 @@
 			files = (
 				B1D098F41DF7904C007EDA01 /* Podfile in Resources */,
 				B17648D21DF658C2007A4F84 /* CartViewController.xib in Resources */,
-				339379A51B080C0A003A722D /* Main.storyboard in Resources */,
 				339379AA1B080C0A003A722D /* LaunchScreen.xib in Resources */,
+				B164CB9B1DF922380053FDA4 /* Main.storyboard in Resources */,
 				339379A71B080C0A003A722D /* Images.xcassets in Resources */,
 				B12E7AD61DF66D2E0072B31D /* ProductViewController.xib in Resources */,
 			);
@@ -367,7 +364,6 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				B164CB991DF91AB20053FDA4 /* Threading.swift in Sources */,
 				B164CB961DF919990053FDA4 /* AlertDialog.swift in Sources */,
 				3AE2C4E41DF90BF60081F19E /* PaymentViewController.swift in Sources */,
 				B164CB901DF918820053FDA4 /* TextEntryTableViewCell.swift in Sources */,
@@ -409,14 +405,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		339379A31B080C0A003A722D /* Main.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				339379A41B080C0A003A722D /* Base */,
-			);
-			name = Main.storyboard;
-			sourceTree = "<group>";
-		};
 		339379A81B080C0A003A722D /* LaunchScreen.xib */ = {
 			isa = PBXVariantGroup;
 			children = (
