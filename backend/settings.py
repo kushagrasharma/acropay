@@ -1,7 +1,7 @@
 products = {
     'additional_lookup': {
         'url': 'regex("[\w]+")',
-        'field': 'price'
+        'field': '"price"'
     }
 }
 
