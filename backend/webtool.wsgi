@@ -1,5 +1,5 @@
 import sys
  
-sys.path.append('/root/final_project/backend')
+sys.path.append('/var/www')
  
 from webtool import app as application
