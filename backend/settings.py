@@ -9,9 +9,13 @@ schema = {
     }
 }
 
-people = {
+products = {
+    'additional_lookup': {
+        'url': 'regex("[\w]+")',
+        'field': 'price'
+    },
     'schema': schema
 }
 DOMAIN = {
-    'products': people,
+    'products': products,
 }
