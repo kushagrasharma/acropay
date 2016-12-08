@@ -1,10 +1,8 @@
-products = {
-    'additional_lookup': {
-        'url': 'regex("[\w]+")',
-        'field': '"price"'
+DOMAIN = {
+    'products': {
+        'item_lookup_field': 'barcode',
+        'type': 'dict'
     }
 }
-
-DOMAIN = {'products': products}
 
 MONGO_DBNAME = 'products'
