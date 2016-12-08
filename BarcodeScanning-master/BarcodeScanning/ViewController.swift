@@ -8,7 +8,6 @@
 
 import UIKit
 import AVFoundation
-import SlideMenuControllerSwift
 
 class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
 {
@@ -90,7 +89,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             self.lblDataInfo.text = decodedData.stringValue
             self.lblDataType.text = decodedData.type
             performSegue(withIdentifier: "barcodeScannedSegue", sender: self)
-            
+            break
         }
     }
     
