@@ -27,19 +27,22 @@ class ProductStore {
         return nil
     }
     
-    func changeQuantityWithCode(_ barcode: String,_ quantity: Int){
+    func setQuantityWithCode(_ barcode: String,_ quantity: Int){
         let index: Int = withCode(barcode)!
-        let newQuantity = allProducts[index].quantity + quantity
-        if newQuantity < 1{
+        if quantity == 0{
             allProducts.remove(at: index)
         }
         else{
-            allProducts[index].quantity = newQuantity
+            allProducts[index].quantity = quantity
         }
     }
     
     func priceSum() -> Double{
-        return allProducts.reduce(0.0) { $0 + ($1.priceInDollars ?? 0) }
+        var sum: Double = 0
+        for product in allProducts{
+            sum += product.priceInDollars
+        }
+        return sum
     }
     
     func stringDescription() -> String{

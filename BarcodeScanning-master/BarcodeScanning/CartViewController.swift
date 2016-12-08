@@ -121,7 +121,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Loading UI..
         SwiftSpinner.show("Updating quantity")
         
-        self.productStore!.changeQuantityWithCode(cell.productId!, quantity)
+        self.productStore!.setQuantityWithCode(cell.productId!, quantity)
         
         
         self.refreshCart()
