@@ -5,6 +5,6 @@ products = {
     }
 }
 
-DOMAIN = {'products': {products}}
+DOMAIN = {'products': products}
 
 MONGO_DBNAME = 'products'
