@@ -27,12 +27,10 @@ class ProductStore {
         return nil
     }
     
-    func reduceQuantityWithCode(_ barcode: String){
+    func changeQuantityWithCode(_ barcode: String,_ quantity: Int){
         let index: Int = withCode(barcode)!
-        if allProducts[index].quantity > 1{
-            allProducts[index].quantity -= 1
-        }
-        else{
+        let newQuantity = allProducts[index].quantity + quantity
+        if newQuantity < 1{
             allProducts.remove(at: index)
         }
     }

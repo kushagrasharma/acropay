@@ -112,6 +112,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         SwiftSpinner.hide()
     }
     
+    
     // MARK: - Cell delegate
     func cartTableViewCellSetQuantity(_ cell: CartTableViewCell, quantity: Int) {
         // The cell's quantity's been updated by the stepper control - tell the productStore and refresh cart
@@ -120,7 +121,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Loading UI..
         SwiftSpinner.show("Updating quantity")
         
-        productStore!.reduceQuantityWithCode(cell.productId!)
+        self.productStore!.changeQuantityWithCode(cell.productId!, quantity)
         
         self.refreshCart()
         
