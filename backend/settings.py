@@ -56,7 +56,7 @@ people = {
 
     'schema': schema
 }
-
+MONGO_DBNAME = 'products'
 DOMAIN = {
-    'people': people,
+    'products': {},
 }
