@@ -2,8 +2,8 @@
 //  BackendAPIAdapter.swift
 //  Stripe iOS Example (Simple)
 //
-//  Created by Ben Guo on 4/15/16.
-//  Copyright © 2016 Stripe. All rights reserved.
+//  Created by Kushagra Sharma on 10/7/16.
+//  Copyright © 2016 Acropay. All rights reserved.
 //
 
 import Foundation
