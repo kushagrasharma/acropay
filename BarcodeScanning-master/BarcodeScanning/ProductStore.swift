@@ -18,13 +18,5 @@ class ProductStore {
         self.allProducts.append(newProduct)
         
         return newProduct
-
-        
-    // Gives controller accecss to the store 
-    class ItemsViewController: UITableViewController {
-            
-            var productStore: ProductStore!
-        }
-
-
-
+    }
+}
