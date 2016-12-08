@@ -135,6 +135,7 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         if segue.identifier == "barcodeScannedSegue"{
             let destinationViewController = segue.destination as! ProductViewController
             destinationViewController.barcodeString = self.barcode!
+            print(self.barcode!)
         }
     }
     
