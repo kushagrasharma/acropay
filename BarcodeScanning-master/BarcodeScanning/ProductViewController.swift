@@ -21,6 +21,7 @@ class ProductViewController: UIViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
+        self.title = product?.name
         buyButton?.backgroundColor = MOLTIN_COLOR
         
         // Do any additional setup after loading the view.

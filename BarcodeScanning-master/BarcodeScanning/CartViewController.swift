@@ -36,7 +36,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
+        // only need to refresh cart if coming from add product page, not barcode page
         refreshCart()
         
     }

@@ -20,9 +20,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Override point for customization after application launch.
         // create viewController code...
         
-        let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
-        self.window?.rootViewController = slideMenuController
-        self.window?.makeKeyAndVisible()
+//        let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
+//        self.window?.rootViewController = slideMenuController
+//        self.window?.makeKeyAndVisible()
         
         return true
     }
