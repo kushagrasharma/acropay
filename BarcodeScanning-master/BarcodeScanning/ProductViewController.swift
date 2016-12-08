@@ -40,7 +40,7 @@ class ProductViewController: UIViewController {
     @IBAction func buyProduct(_ sender: AnyObject) {
         // Add the current product to the cart
         
-        performSegue(withIdentifier: "productAddedToCart", sender: self)
+        performSegue(withIdentifier: "addToCart", sender: self)
         
     }
     

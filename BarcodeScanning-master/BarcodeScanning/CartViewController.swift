@@ -80,7 +80,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
             
             AlertDialog.showAlert("Error", message: "Couldn't load cart", viewController: self)
             print("Something went wrong...")
-            print(error)
+            print(error?.localizedDescription)
         })
         
         

@@ -48,69 +48,12 @@
                     <navigationItem key="navigationItem" id="vH3-Fq-DYY"/>
                     <connections>
                         <outlet property="cameraView" destination="fhr-f7-UgC" id="Ky1-4i-aUz"/>
-                        <segue destination="efN-DL-r6i" kind="show" identifier="barcodeScannedSegue" id="Tw2-3F-99y"/>
+                        <segue destination="6Pl-jU-BGN" kind="show" identifier="barcodeScannedSegue" id="Epi-or-de0"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="x5A-6p-PRh" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="1048.8" y="35.532233883058474"/>
-        </scene>
-        <!--Product View Controller-->
-        <scene sceneID="16G-Qx-1Df">
-            <objects>
-                <viewController id="efN-DL-r6i" customClass="ProductViewController" customModule="BarcodeScanning" customModuleProvider="target" sceneMemberID="viewController">
-                    <layoutGuides>
-                        <viewControllerLayoutGuide type="top" id="zYf-6j-76Y"/>
-                        <viewControllerLayoutGuide type="bottom" id="vJV-f5-NbT"/>
-                    </layoutGuides>
-                    <view key="view" contentMode="scaleToFill" id="Ynx-GN-o3x">
-                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
-                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
-                        <subviews>
-                            <button opaque="NO" contentMode="scaleToFill" ambiguous="YES" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="7IB-2u-UBM">
-                                <rect key="frame" x="148" y="543" width="79" height="30"/>
-                                <state key="normal" title="Add to Cart"/>
-                                <connections>
-                                    <action selector="addToCart:" destination="efN-DL-r6i" eventType="touchUpInside" id="aoT-dp-OD1"/>
-                                    <segue destination="HLa-8K-dOr" kind="show" identifier="productAddedToCart" id="Qeu-kG-xyy"/>
-                                </connections>
-                            </button>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" text="Price" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="KtL-uo-pfT">
-                                <rect key="frame" x="166" y="412" width="39" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" ambiguous="YES" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="2Ps-Dt-VuM">
-                                <rect key="frame" x="67" y="95" width="238" height="309"/>
-                            </imageView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Product Name" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="dnT-Ut-p9n">
-                                <rect key="frame" x="133" y="66" width="110" height="21"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
-                                <nil key="textColor"/>
-                                <nil key="highlightedColor"/>
-                            </label>
-                        </subviews>
-                        <color key="backgroundColor" red="0.96156436204910278" green="0.95675712823867798" blue="0.94373130798339844" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
-                        <constraints>
-                            <constraint firstItem="7IB-2u-UBM" firstAttribute="centerX" secondItem="2Ps-Dt-VuM" secondAttribute="centerX" id="5pf-18-oWm"/>
-                            <constraint firstItem="dnT-Ut-p9n" firstAttribute="centerX" secondItem="2Ps-Dt-VuM" secondAttribute="centerX" id="Kzm-Ts-JYv"/>
-                            <constraint firstItem="dnT-Ut-p9n" firstAttribute="top" secondItem="zYf-6j-76Y" secondAttribute="bottom" constant="46" id="NGq-Fa-eaZ"/>
-                            <constraint firstItem="KtL-uo-pfT" firstAttribute="top" secondItem="2Ps-Dt-VuM" secondAttribute="bottom" constant="8" id="QvQ-WV-Oem"/>
-                            <constraint firstItem="KtL-uo-pfT" firstAttribute="centerX" secondItem="2Ps-Dt-VuM" secondAttribute="centerX" id="ZU4-OR-pqD"/>
-                            <constraint firstItem="7IB-2u-UBM" firstAttribute="top" secondItem="KtL-uo-pfT" secondAttribute="bottom" constant="110" id="bLK-Tv-QDo"/>
-                            <constraint firstItem="dnT-Ut-p9n" firstAttribute="centerX" secondItem="Ynx-GN-o3x" secondAttribute="centerX" id="hSD-VI-tA9"/>
-                            <constraint firstItem="2Ps-Dt-VuM" firstAttribute="top" secondItem="dnT-Ut-p9n" secondAttribute="bottom" constant="8" id="iat-2K-A4r"/>
-                        </constraints>
-                    </view>
-                    <connections>
-                        <outlet property="productName" destination="dnT-Ut-p9n" id="hNi-aS-EkG"/>
-                        <outlet property="productPrice" destination="KtL-uo-pfT" id="PRl-4G-Uju"/>
-                    </connections>
-                </viewController>
-                <placeholder placeholderIdentifier="IBFirstResponder" id="VnD-2B-iNu" userLabel="First Responder" sceneMemberID="firstResponder"/>
-            </objects>
-            <point key="canvasLocation" x="1879.2" y="114.69265367316342"/>
         </scene>
         <!--Navigation Controller-->
         <scene sceneID="DoZ-RG-b4Y">
@@ -655,12 +598,79 @@
             </objects>
             <point key="canvasLocation" x="3884" y="-176"/>
         </scene>
+        <!--Product Detail View Controller-->
+        <scene sceneID="G0E-Gr-FJS">
+            <objects>
+                <viewController id="6Pl-jU-BGN" customClass="ProductDetailViewController" customModule="BarcodeScanning" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="eTG-vB-wbf"/>
+                        <viewControllerLayoutGuide type="bottom" id="VcA-EW-LBW"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="j8g-wG-huR">
+                        <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" misplaced="YES" translatesAutoresizingMaskIntoConstraints="NO" id="9Cr-HQ-YT7">
+                                <rect key="frame" x="0.0" y="64" width="600" height="200"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="200" id="b9p-an-yw1"/>
+                                </constraints>
+                            </imageView>
+                            <textView clipsSubviews="YES" multipleTouchEnabled="YES" contentMode="scaleToFill" misplaced="YES" editable="NO" translatesAutoresizingMaskIntoConstraints="NO" id="l6E-bK-baK">
+                                <rect key="frame" x="0.0" y="262" width="600" height="219"/>
+                                <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <string key="text">Lorem ipsum dolor sit er elit lamet, consectetaur cillium adipisicing pecu, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum. Nam liber te conscient to factor tum poen legum odioque civiuda.</string>
+                                <fontDescription key="fontDescription" type="system" pointSize="16"/>
+                                <textInputTraits key="textInputTraits" autocapitalizationType="sentences"/>
+                                <dataDetectorType key="dataDetectorTypes" phoneNumber="YES" link="YES"/>
+                            </textView>
+                            <button opaque="NO" contentMode="scaleToFill" misplaced="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="bkM-E3-Q9T">
+                                <rect key="frame" x="8" y="498" width="584" height="45"/>
+                                <color key="backgroundColor" red="0.1141758859" green="0.47419178490000002" blue="0.73613840340000003" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="45" id="qWA-3o-IvD"/>
+                                </constraints>
+                                <fontDescription key="fontDescription" type="boldSystem" pointSize="18"/>
+                                <state key="normal" title="Add to cart">
+                                    <color key="titleColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                    <color key="titleShadowColor" red="0.5" green="0.5" blue="0.5" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                                </state>
+                                <connections>
+                                    <action selector="buyProduct:" destination="6Pl-jU-BGN" eventType="touchDown" id="kJK-wx-69y"/>
+                                    <segue destination="HLa-8K-dOr" kind="show" identifier="addToCart" id="ZPh-xv-YVE"/>
+                                </connections>
+                            </button>
+                        </subviews>
+                        <color key="backgroundColor" red="1" green="1" blue="1" alpha="1" colorSpace="custom" customColorSpace="sRGB"/>
+                        <constraints>
+                            <constraint firstItem="bkM-E3-Q9T" firstAttribute="leading" secondItem="j8g-wG-huR" secondAttribute="leadingMargin" constant="-8" id="0w6-ZT-iv4"/>
+                            <constraint firstItem="VcA-EW-LBW" firstAttribute="top" secondItem="bkM-E3-Q9T" secondAttribute="bottom" constant="8" id="8W0-KF-STg"/>
+                            <constraint firstItem="l6E-bK-baK" firstAttribute="top" secondItem="9Cr-HQ-YT7" secondAttribute="bottom" constant="-2" id="IeS-B1-Gjb"/>
+                            <constraint firstItem="9Cr-HQ-YT7" firstAttribute="width" secondItem="j8g-wG-huR" secondAttribute="width" id="e3n-OJ-fSf"/>
+                            <constraint firstItem="bkM-E3-Q9T" firstAttribute="top" secondItem="l6E-bK-baK" secondAttribute="bottom" constant="17" id="hbC-O6-70l"/>
+                            <constraint firstAttribute="trailingMargin" secondItem="bkM-E3-Q9T" secondAttribute="trailing" constant="-8" id="lxe-Bq-ZVN"/>
+                            <constraint firstItem="9Cr-HQ-YT7" firstAttribute="top" secondItem="eTG-vB-wbf" secondAttribute="bottom" id="pcB-29-pC7"/>
+                            <constraint firstItem="9Cr-HQ-YT7" firstAttribute="leading" secondItem="j8g-wG-huR" secondAttribute="leadingMargin" constant="-16" id="q0e-PP-lQ3"/>
+                            <constraint firstItem="l6E-bK-baK" firstAttribute="width" secondItem="9Cr-HQ-YT7" secondAttribute="width" id="r5W-N6-g3I"/>
+                            <constraint firstItem="l6E-bK-baK" firstAttribute="leading" secondItem="j8g-wG-huR" secondAttribute="leadingMargin" constant="-16" id="u6F-gs-fa6"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="buyButton" destination="bkM-E3-Q9T" id="neQ-pt-Jwc"/>
+                        <outlet property="descriptionTextView" destination="l6E-bK-baK" id="5SV-VT-KIC"/>
+                        <outlet property="productImageView" destination="9Cr-HQ-YT7" id="UdU-Cq-ulW"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="hQq-xf-SvG" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1838" y="160"/>
+        </scene>
     </scenes>
     <resources>
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="rG1-2Y-sWJ"/>
-        <segue reference="VKL-be-bbT"/>
+        <segue reference="ZPh-xv-YVE"/>
+        <segue reference="ZTT-qw-a8o"/>
     </inferredMetricsTieBreakers>
 </document>
