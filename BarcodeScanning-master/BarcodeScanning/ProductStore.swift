@@ -40,7 +40,7 @@ class ProductStore {
     func priceSum() -> Double{
         var sum: Double = 0
         for product in allProducts{
-            sum += product.priceInDollars
+            sum += (product.priceInDollars*Double(product.quantity))
         }
         return sum
     }

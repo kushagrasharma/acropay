@@ -45,10 +45,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     func refreshCart() {
         SwiftSpinner.show("Updating cart")
+        
         // Reset cart total
         self.totalLabel?.text = "$" + String(format: "%.2f", self.productStore!.priceSum())
         // And reload table of cart items...
         self.tableView?.reloadData()
+
         // Hide loading UI
         SwiftSpinner.hide()
         // Disable checkout button if no items in cart
