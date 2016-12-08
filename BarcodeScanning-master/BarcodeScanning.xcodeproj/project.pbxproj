@@ -18,6 +18,7 @@
 		3AE2C4E41DF90BF60081F19E /* PaymentViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3AE2C4E31DF90BF60081F19E /* PaymentViewController.swift */; };
 		B12E7AD51DF66D2E0072B31D /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E7AD31DF66D2E0072B31D /* ProductViewController.swift */; };
 		B12E7AD61DF66D2E0072B31D /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12E7AD41DF66D2E0072B31D /* ProductViewController.xib */; };
+		B164CB801DF9178F0053FDA4 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B164CB7F1DF9178F0053FDA4 /* SwiftSpinner.swift */; };
 		B17648D11DF658C2007A4F84 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17648CF1DF658C2007A4F84 /* CartViewController.swift */; };
 		B17648D21DF658C2007A4F84 /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17648D01DF658C2007A4F84 /* CartViewController.xib */; };
 		B1D098F41DF7904C007EDA01 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B1D098F31DF7904C007EDA01 /* Podfile */; };
@@ -52,6 +53,7 @@
 		3AE2C4E31DF90BF60081F19E /* PaymentViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = PaymentViewController.swift; sourceTree = "<group>"; };
 		B12E7AD31DF66D2E0072B31D /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
 		B12E7AD41DF66D2E0072B31D /* ProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
+		B164CB7F1DF9178F0053FDA4 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		B17648CF1DF658C2007A4F84 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
 		B17648D01DF658C2007A4F84 /* CartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
 		B1D098F31DF7904C007EDA01 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -121,6 +123,7 @@
 		3393799D1B080C0A003A722D /* Supporting Files */ = {
 			isa = PBXGroup;
 			children = (
+				B164CB7F1DF9178F0053FDA4 /* SwiftSpinner.swift */,
 				3393799E1B080C0A003A722D /* Info.plist */,
 			);
 			name = "Supporting Files";
@@ -321,6 +324,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				3AE2C4E41DF90BF60081F19E /* PaymentViewController.swift in Sources */,
+				B164CB801DF9178F0053FDA4 /* SwiftSpinner.swift in Sources */,
 				339379A21B080C0A003A722D /* ViewController.swift in Sources */,
 				B17648D11DF658C2007A4F84 /* CartViewController.swift in Sources */,
 				B12E7AD51DF66D2E0072B31D /* ProductViewController.swift in Sources */,
