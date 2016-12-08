@@ -5,4 +5,5 @@ target 'BarcodeScanning' do
   pod 'SwiftyJSON', :git => 'https://github.com/SwiftyJSON/SwiftyJSON.git'
   pod 'Moltin', :git => 'https://github.com/moltin/ios-sdk.git', :branch => 'master'
   pod 'SDWebImage', '~>3.7'
+  pod 'SlideMenuControllerSwift'
 end
