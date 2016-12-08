@@ -7,4 +7,5 @@ target 'BarcodeScanning' do
   pod 'SDWebImage', '~>3.7'
   pod 'SlideMenuControllerSwift'
   pod 'Stripe'
+  pod 'Alamofire'
 end

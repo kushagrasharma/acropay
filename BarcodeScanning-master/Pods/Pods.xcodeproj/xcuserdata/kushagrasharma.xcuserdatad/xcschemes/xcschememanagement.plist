@@ -9,6 +9,11 @@
 			<key>isShown</key>
 			<false/>
 		</dict>
+		<key>Alamofire.xcscheme</key>
+		<dict>
+			<key>isShown</key>
+			<false/>
+		</dict>
 		<key>Moltin.xcscheme</key>
 		<dict>
 			<key>isShown</key>
@@ -46,6 +51,52 @@
 		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
-	<dict/>
+	<dict>
+		<key>060A85C828E2A69EE45586CC242A5AFD</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C5C2E5EEE3A42C51E9F6E1BC38FBABB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>24DBDCB8C59D287915C441B3B8F9D455</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>32E155CAF7FD88497CCAA61C3CD537B0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>7A699C00B8431AC55199F28171BC20AE</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>88E9EC28B8B46C3631E6B242B50F4442</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>A96A77019FFDCF0D1DA538153A0FCDB6</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>F9A6FC8238C6B8A68667F9B704826CFC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+	</dict>
 </dict>
 </plist>

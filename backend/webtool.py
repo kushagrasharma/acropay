@@ -6,7 +6,7 @@ from flask import current_app as app
 class MyBasicAuth(BasicAuth):
     def check_auth(self, username, password, allowed_roles, resource,
                    method):
-        return username == 'admin' and password == 'secret'
+        return username == 'client' and password == 'cs50final123'
 
 app = Eve(auth=MyBasicAuth)
 
