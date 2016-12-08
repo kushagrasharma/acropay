@@ -26,4 +26,8 @@ class Product: NSObject{
         
         super.init()
     }
+    
+    func stringDescription() -> String{
+        return "Name: \(name), price \(priceInDollars)"
+    }
 }

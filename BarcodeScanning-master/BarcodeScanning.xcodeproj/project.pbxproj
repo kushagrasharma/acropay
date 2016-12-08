@@ -141,8 +141,8 @@
 				B12E7AD41DF66D2E0072B31D /* ProductViewController.xib */,
 				B1D098F31DF7904C007EDA01 /* Podfile */,
 				339379A61B080C0A003A722D /* Images.xcassets */,
-				339379A81B080C0A003A722D /* LaunchScreen.xib */,
 				3393799D1B080C0A003A722D /* Supporting Files */,
+				339379A81B080C0A003A722D /* LaunchScreen.xib */,
 			);
 			path = BarcodeScanning;
 			sourceTree = "<group>";

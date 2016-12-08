@@ -54,7 +54,7 @@ class CartTableViewCell: UITableViewCell {
         
         itemTitleLabel?.text = itemDict.name
         
-        itemPriceLabel?.text = String(itemDict.priceInDollars)
+        itemPriceLabel?.text = "$" + String(itemDict.priceInDollars)
         
         self.productId = itemDict.barcodeNumber
         

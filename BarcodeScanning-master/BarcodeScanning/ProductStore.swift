@@ -41,4 +41,8 @@ class ProductStore {
         return allProducts.reduce(0.0) { $0 + ($1.priceInDollars ?? 0) }
     }
     
+    func stringDescription() -> String{
+        return "This store has \(allProducts.count) elements"
+    }
+    
 }

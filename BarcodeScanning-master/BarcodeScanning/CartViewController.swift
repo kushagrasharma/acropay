@@ -17,7 +17,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var totalLabel:UILabel?
     @IBOutlet weak var checkoutButton:UIButton?
     
-    var productStore: ProductStore = ProductStore()
+    var productStore: ProductStore? = ProductStore()
     
     fileprivate let BILLING_ADDRESS_SEGUE_IDENTIFIER = "showBillingAddress"
     
@@ -46,13 +46,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     func refreshCart() {
         SwiftSpinner.show("Updating cart")
         // Reset cart total
-        self.totalLabel?.text = "$" + String(self.productStore.priceSum())
+        self.totalLabel?.text = "$" + String(self.productStore!.priceSum())
         // And reload table of cart items...
         self.tableView?.reloadData()
         // Hide loading UI
         SwiftSpinner.hide()
         // Disable checkout button if no items in cart
-        self.checkoutButton?.isEnabled = self.productStore.allProducts.count > 0
+        self.checkoutButton?.isEnabled = self.productStore!.allProducts.count > 0
         
     }
     
@@ -63,7 +63,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.productStore.allProducts.count
+        return self.productStore!.allProducts.count
         
     }
     
@@ -72,7 +72,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let row = (indexPath as NSIndexPath).row
         
-        let product:Product = productStore.allProducts[row]
+        let product:Product = productStore!.allProducts[row]
         
         cell.setItemDictionary(product)
         
@@ -107,7 +107,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     
     fileprivate func removeItemFromCartAtIndex(_ index: Int) {
         SwiftSpinner.show("Updating cart")
-        self.productStore.allProducts.remove(at: index)
+        self.productStore!.allProducts.remove(at: index)
         self.refreshCart()
         SwiftSpinner.hide()
     }
@@ -120,7 +120,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Loading UI..
         SwiftSpinner.show("Updating quantity")
         
-        productStore.reduceQuantityWithCode(cell.productId!)
+        productStore!.reduceQuantityWithCode(cell.productId!)
         
         self.refreshCart()
         
