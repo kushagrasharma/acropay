@@ -22,13 +22,29 @@ class Product: NSObject{
     private var password = "cs50final123"
     
     init(name: String = "Oreos", serialNumber: String = "0044000007492", valueInDollars: Double = 2.75, quantity: Int = 1) {
-        let JSONData 
-        self.name = name
-        self.priceInDollars = round(100*valueInDollars)/100
+        var json:JSON?
+        Alamofire.request("http://acropay.io/products/\(serialNumber)")
+            .authenticate(user: self.user, password: self.password)
+            .responseJSON { response in
+                if response.result.value != nil{
+                    json = JSON(response.result.value!)
+                    print(response.result.value!)
+                }
+        }
         self.barcodeNumber = serialNumber
-        self.dateCreated = Date()
-        self.quantity = quantity
-        
+        self.quantity = 1
+        if let JSONData = json{
+            self.name = JSONData["name"].string!
+            self.priceInDollars = round(100*JSONData["price"].double!)/100
+            self.dateCreated = Date()
+            
+        }
+        else{
+            self.name = name
+            self.priceInDollars = round(100*valueInDollars)/100
+            self.dateCreated = Date()
+            
+        }
         super.init()
     }
     
@@ -36,15 +52,4 @@ class Product: NSObject{
         return "Name: \(name), price \(priceInDollars)"
     }
     
-    // http://stackoverflow.com/questions/24379601/how-to-make-an-http-request-basic-auth-in-swift
-    func getDataFromServer(barcode: String) -> JSON?{
-        Alamofire.request("http://acropay.io/products/\(barcode)")
-                 .authenticate(user: self.user, password: self.password)
-                 .responseJSON { response in
-            if((response.result.value) != nil) {
-                return JSON(responseData.result.value!)
-            }
-            return nil
-        }
-    }
 }

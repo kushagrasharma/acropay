@@ -125,7 +125,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         self.productStore!.setQuantityWithCode(cell.productId!, quantity)
         
-        
         self.refreshCart()
         
         SwiftSpinner.hide()
