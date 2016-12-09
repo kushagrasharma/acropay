@@ -16,7 +16,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var checkoutButton:UIButton?
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
-    fileprivate let BILLING_ADDRESS_SEGUE_IDENTIFIER = "showBillingAddress"
     
     override func viewDidLoad() {
         super.viewDidLoad()
@@ -25,26 +24,23 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         totalLabel?.text = ""
         
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // only need to refresh cart if coming from add product page, not barcode page
         refreshCart()
-        
+        for (index, cell) in (tableView?.visibleCells.enumerated())!{
+            cartTableViewCellSetQuantity(cell as! CartTableViewCell, quantity: appDelegate.productStore.allProducts[index].quantity)
+        }
     }
-    
+
     override func didReceiveMemoryWarning() {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
     
     func refreshCart() {
-        for cell in self.tableView?.visibleCells as! [CartTableViewCell]{
-            cell.setItemQuantity(appDelegate.productStore.allProducts[appDelegate.productStore.withCode(cell.productId!)!].quantity)
-        }
-        print(appDelegate.productStore.stringDescription())
+        
         // Reset cart total
         self.totalLabel?.text = "$" + String(format: "%.2f", self.appDelegate.productStore.priceSum())
         // And reload table of cart items...
@@ -123,14 +119,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         // Loading UI..
         appDelegate.productStore.setQuantityWithCode(cell.productId!, quantity)
         
-        self.reloadCellAtIndex(indexPath: (self.tableView?.indexPath(for: cell))!)
         self.refreshCart()
-    }
-    
-    private func reloadCellAtIndex(indexPath: IndexPath) {
-        tableView?.beginUpdates()
-        tableView?.reloadRows(at: [indexPath], with: .automatic)
-        tableView?.endUpdates()
     }
     
     // MARK: - Checkout button
@@ -139,9 +128,6 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
                                                             settings: SettingsViewController().settings)
         self.navigationController?.pushViewController(checkoutViewController, animated: true)
     }
-    
-    // http://stackoverflow.com/questions/32931731/ios-swift-update-uitableview-custom-cell-label-outside-of-tableview-cellforrow
-    
     
     
 }

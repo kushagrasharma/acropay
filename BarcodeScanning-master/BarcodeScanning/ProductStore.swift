@@ -9,7 +9,7 @@
 import UIKit
 
 class ProductStore {
-    
+
     var allProducts = [Product]()
     
     func addProduct(_ product: Product){
