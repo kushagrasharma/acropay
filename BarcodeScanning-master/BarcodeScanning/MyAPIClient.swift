@@ -13,7 +13,7 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
 
     static let sharedClient = MyAPIClient()
     let session: URLSession
-    var baseURLString: String? = nil
+    var baseURLString: String?
     var defaultSource: STPCard? = nil
     var sources: [STPCard] = []
 
