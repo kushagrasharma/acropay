@@ -142,12 +142,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
             destinationViewController.product = Product(serialNumber:self.barcode!)
             SwiftSpinner.hide()
         }
-        else if segue.identifier == "showCart"{
-            let destinationViewController = segue.destination as! CartViewController
-            if destinationViewController.productStore == nil{
-                destinationViewController.productStore = ProductStore()
-            }
-        }
     }
 
 }

@@ -21,13 +21,14 @@ class CartTableViewCell: UITableViewCell {
     @IBOutlet weak var itemQuantityStepper:UIStepper?
     
     var delegate:CartTableViewCellDelegate?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var productId:String?
 
     var quantity:Int {
         get {
             if (self.itemQuantityStepper != nil) {
-                return Int(self.itemQuantityStepper!.value)
+                return appDelegate.productStore.allProducts[appDelegate.productStore.withCode(productId!)!].quantity
             }
             
             return 0
@@ -80,6 +81,7 @@ class CartTableViewCell: UITableViewCell {
     }
     
     func setItemQuantity(_ quantity: Int) {
+        appDelegate.productStore.productWithCode(self.productId!)?.quantity = quantity
         let itemQuantityText = "Qty. \(quantity)"
         itemQuantityLabel?.text = itemQuantityText
         

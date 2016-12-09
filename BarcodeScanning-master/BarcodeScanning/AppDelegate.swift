@@ -17,6 +17,8 @@ let MOLTIN_COLOR = UIColor(red: (139.0/255.0), green: (98.0/255.0), blue: (181.0
 // App delegate is a subclass of UI Responder, but a delegate of UIApplication Delegate
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
+    var productStore = ProductStore()
+    
     // declare window variable, optional type
     var window: UIWindow?
     

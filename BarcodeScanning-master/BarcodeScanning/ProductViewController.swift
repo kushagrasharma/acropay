@@ -54,14 +54,8 @@ class ProductViewController: UIViewController {
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // Product has been added to cart
         if segue.identifier == "addToCart"{
-            let destinationViewController = segue.destination as! CartViewController
-            if destinationViewController.productStore == nil{
-                destinationViewController.productStore = ProductStore()
-                destinationViewController.productStore!.addProduct(self.product!)
-            }
-            else{
-                destinationViewController.productStore!.addProduct(self.product!)
-            }
+            let appDelegate = UIApplication.shared.delegate as! AppDelegate
+            appDelegate.productStore.addProduct(self.product!)
             
         }
     }

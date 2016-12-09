@@ -30,6 +30,10 @@ class ProductStore {
         return nil
     }
     
+    func productWithCode(_ barcode: String) -> Product?{
+        return allProducts[self.withCode(barcode)!]
+    }
+    
     func setQuantityWithCode(_ barcode: String,_ quantity: Int){
         let index: Int = withCode(barcode)!
         if quantity == 0{

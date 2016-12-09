@@ -2,7 +2,7 @@
 //  CheckoutRowView.swift
 //  Stripe iOS Example (Simple)
 //
-//  Created by Ben Guo on 4/22/16.
+//  Edited by Kushagra Sharma on 12/8/16.
 //  Copyright © 2016 Stripe. All rights reserved.
 //
 

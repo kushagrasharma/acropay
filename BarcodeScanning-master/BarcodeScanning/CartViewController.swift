@@ -2,12 +2,10 @@
 //  CartViewController.swift
 //  MoltinSwiftExample
 //
-//  Created by Dylan McKee on 15/08/2015.
-//  Copyright (c) 2015 Moltin. All rights reserved.
+//  Created by Kushagra Sharma on 12/8/16.
+//  Copyright (c) 2016 Acropay. All rights reserved.
 //
-
 import UIKit
-import Moltin
 
 class CartViewController: UIViewController, UITableViewDelegate, UITableViewDataSource, CartTableViewCellDelegate {
     
@@ -16,8 +14,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var tableView:UITableView?
     @IBOutlet weak var totalLabel:UILabel?
     @IBOutlet weak var checkoutButton:UIButton?
-    
-    var productStore: ProductStore?
+    let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     fileprivate let BILLING_ADDRESS_SEGUE_IDENTIFIER = "showBillingAddress"
     
@@ -27,10 +24,13 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.title = "Cart"
         
         totalLabel?.text = ""
+        
+        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
+        // only need to refresh cart if coming from add product page, not barcode page
         refreshCart()
         
     }
@@ -41,19 +41,17 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func refreshCart() {
-        var i = 0
         for cell in self.tableView?.visibleCells as! [CartTableViewCell]{
-            cartTableViewCellSetQuantity(cell, quantity: (productStore?.allProducts[i].quantity)!)
-            i += 1
+            cell.setItemQuantity(appDelegate.productStore.allProducts[appDelegate.productStore.withCode(cell.productId!)!].quantity)
         }
-        print(productStore?.stringDescription())
+        print(appDelegate.productStore.stringDescription())
         // Reset cart total
-        self.totalLabel?.text = "$" + String(format: "%.2f", self.productStore!.priceSum())
+        self.totalLabel?.text = "$" + String(format: "%.2f", self.appDelegate.productStore.priceSum())
         // And reload table of cart items...
         self.tableView?.reloadData()
-
+        
         // Disable checkout button if no items in cart
-        self.checkoutButton?.isEnabled = self.productStore!.allProducts.count > 0
+        self.checkoutButton?.isEnabled = self.appDelegate.productStore.allProducts.count > 0
         if (self.checkoutButton?.isEnabled)!{
             self.checkoutButton?.backgroundColor = MOLTIN_COLOR
         }
@@ -69,7 +67,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-        return self.productStore!.allProducts.count
+        return appDelegate.productStore.allProducts.count
         
     }
     
@@ -78,7 +76,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         
         let row = (indexPath as NSIndexPath).row
         
-        let product:Product = productStore!.allProducts[row]
+        let product:Product = appDelegate.productStore.allProducts[row]
         
         cell.setItemDictionary(product)
         
@@ -112,10 +110,8 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     fileprivate func removeItemFromCartAtIndex(_ index: Int) {
-        SwiftSpinner.show("Updating cart")
-        self.productStore!.allProducts.remove(at: index)
+        appDelegate.productStore.allProducts.remove(at: index)
         self.refreshCart()
-        SwiftSpinner.hide()
     }
     
     
@@ -125,19 +121,27 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         // If quantity = 0, remove item
         
         // Loading UI..
-        self.productStore!.setQuantityWithCode(cell.productId!, quantity)
+        appDelegate.productStore.setQuantityWithCode(cell.productId!, quantity)
         
+        self.reloadCellAtIndex(indexPath: (self.tableView?.indexPath(for: cell))!)
         self.refreshCart()
-        
-        
+    }
+    
+    private func reloadCellAtIndex(indexPath: IndexPath) {
+        tableView?.beginUpdates()
+        tableView?.reloadRows(at: [indexPath], with: .automatic)
+        tableView?.endUpdates()
     }
     
     // MARK: - Checkout button
     @IBAction func checkoutButtonClicked(_ sender: AnyObject) {
-        let checkoutViewController = CheckoutViewController(price: Int(100*self.productStore!.priceSum()),
+        let checkoutViewController = CheckoutViewController(price: Int(100*appDelegate.productStore.priceSum()),
                                                             settings: SettingsViewController().settings)
         self.navigationController?.pushViewController(checkoutViewController, animated: true)
     }
     
+    // http://stackoverflow.com/questions/32931731/ios-swift-update-uitableview-custom-cell-label-outside-of-tableview-cellforrow
+    
+    
+    
 }
-
