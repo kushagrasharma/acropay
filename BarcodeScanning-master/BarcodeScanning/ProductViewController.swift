@@ -32,9 +32,14 @@ class ProductViewController: UIViewController {
         
         let buyButtonTitle = "Buy Now $" + String(format: "%.2f", product!.priceInDollars)
         self.buyButton?.setTitle(buyButtonTitle, for: UIControlState())
+        
+        var imageUrl = ""
+        
         if product!.images.count > 0{
-            productImageView?.image = product!.images[0]
+            imageUrl = product!.images[0]!
         }
+        
+        productImageView?.sd_setImage(with: URL(string:imageUrl))
         
         
     }

@@ -12,6 +12,9 @@ schema = {
     },
     'name': {
         'type': 'string'
+    },
+    'description': {
+        'type': 'string'
     }
 }
 

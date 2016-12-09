@@ -62,9 +62,13 @@ class CartTableViewCell: UITableViewCell {
         _ = "Qty. \(qty.intValue)"
         self.itemQuantityStepper?.value = qty.doubleValue
         
+        var imageUrl = ""
+        
         if itemDict.images.count > 0{
-            itemImageView?.image = itemDict.images[0]
+            imageUrl = itemDict.images[0]!
         }
+        
+        itemImageView?.sd_setImage(with: URL(string:imageUrl))
 
     }
     

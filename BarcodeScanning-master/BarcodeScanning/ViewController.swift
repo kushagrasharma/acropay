@@ -138,7 +138,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         // If barcode has been scanned and segueing to product page
         self.captureSession.stopRunning()
         if segue.identifier == "barcodeScannedSegue"{
-            print(self.barcode!)
             let destinationViewController = segue.destination as! ProductViewController
             destinationViewController.product = Product(serialNumber:self.barcode!)
         }
