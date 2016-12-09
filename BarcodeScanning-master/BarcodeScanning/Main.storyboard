@@ -41,6 +41,9 @@
                                 <rect key="frame" x="276" y="7" width="83" height="30"/>
                                 <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <state key="normal" title="View Cart"/>
+                                <connections>
+                                    <action selector="showCart:" destination="vXZ-lx-hvc" eventType="touchUpInside" id="npB-U8-rkB"/>
+                                </connections>
                             </button>
                             <connections>
                                 <segue destination="HLa-8K-dOr" kind="show" identifier="showCart" id="03T-MK-JqO"/>

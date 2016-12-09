@@ -117,7 +117,6 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
     
     
     //MARK: IBAction Functions
-    
     @IBAction func showCart(_ sender: UIButton){
         performSegue(withIdentifier: "showCart", sender: self)
     }
@@ -139,7 +138,9 @@ class ViewController: UIViewController, AVCaptureMetadataOutputObjectsDelegate
         self.captureSession.stopRunning()
         if segue.identifier == "barcodeScannedSegue"{
             let destinationViewController = segue.destination as! ProductViewController
+            SwiftSpinner.show("Retreiving product info...")
             destinationViewController.product = Product(serialNumber:self.barcode!)
+            SwiftSpinner.hide()
         }
     }
     

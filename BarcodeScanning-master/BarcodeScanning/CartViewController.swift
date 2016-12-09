@@ -51,7 +51,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
 
         // Disable checkout button if no items in cart
         self.checkoutButton?.isEnabled = self.productStore!.allProducts.count > 0
-        
+        if (self.checkoutButton?.isEnabled)!{
+            self.checkoutButton?.backgroundColor = MOLTIN_COLOR
+        }
+        else{
+            self.checkoutButton?.backgroundColor = UIColor.gray
+        }
     }
     
     // MARK: - TableView Data source & Delegate
