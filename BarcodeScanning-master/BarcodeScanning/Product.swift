@@ -27,10 +27,13 @@ class Product: NSObject{
         self.dateCreated = Date()
         let response = Alamofire.request("http://acropay.io/products/\(serialNumber)")
             .responseJSON()
-        if let json = JSON(response.result.value){
+        print(JSON(response.result.value))
+        if let data = response.result.value{
+            let json = JSON(data)
             self.name = (json["name"].string!)
             self.priceInDollars = round(100*(json["price"].double!))/100
             self.images = json["images"].arrayValue.map { $0.string!}
+            self.productDescription = json["description"].string!
         }
         super.init()
     }
