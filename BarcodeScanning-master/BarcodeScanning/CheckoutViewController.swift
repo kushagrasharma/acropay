@@ -1,37 +1,49 @@
 //
 //  CheckoutViewController.swift
-//  BarcodeScanning
+//  Acropay
 //
 //  Created by Kushagra Sharma on 12/8/16.
 //  Copyright © 2016 Acropay. All rights reserved.
 //
 
+// Make necessary imports
 import UIKit
 import Stripe
 
+// CheckoutViewController is a subclass of UIViewController, with delegate STPPayment...
 class CheckoutViewController: UIViewController, STPPaymentContextDelegate {
     
+    // Set constant the stripe key
     let stripePublishableKey = "pk_test_lttP2oCNWtN1FTKiQMyBpS7M"
     
+    // Set backend URL
     let backendBaseURL: String? = "https://mysterious-river-36670.herokuapp.com/"
     
+    // Potential for incorporation of apple pay, but dependant upon receiving developer license
     let appleMerchantID: String? = nil
     
+    // Set company name
     let companyName = "AcroPay"
     
+    // Set currency to US Dollars
     let paymentCurrency = "usd"
     let paymentContext: STPPaymentContext
     
+    // Set theme, and checkout view conditions, etc
     let theme: STPTheme
     let paymentRow: CheckoutRowView
-    //    let shippingRow: CheckoutRowView
     let totalRow: CheckoutRowView
     let buyButton: BuyButton
     let rowHeight: CGFloat = 44
+    
+    // Possibly change to UIImage
     let productImage = UILabel()
+    
+    // App activity indicator showcasing that a task is in progress
     let activityIndicator = UIActivityIndicatorView(activityIndicatorStyle: .gray)
     let numberFormatter: NumberFormatter
-    //    let shippingString: String
+
+    // Progressing Payment animation
     var paymentInProgress: Bool = false {
         didSet {
             UIView.animate(withDuration: 0.3, delay: 0, options: .curveEaseIn, animations: {
@@ -50,44 +62,37 @@ class CheckoutViewController: UIViewController, STPPaymentContextDelegate {
     }
     
     init(price: Int, settings: Settings) {
-        //        self.product = product
-        //        self.productImage.text = product
         self.theme = settings.theme
         MyAPIClient.sharedClient.baseURLString = self.backendBaseURL
         
-        // This code is included here for the sake of readability, but in your application you should set up your configuration and theme earlier, preferably in your App Delegate.
+        // Setting up configuration and theme
         let config = STPPaymentConfiguration.shared()
         config.publishableKey = self.stripePublishableKey
         config.appleMerchantIdentifier = self.appleMerchantID
         config.companyName = self.companyName
-        config.requiredBillingAddressFields = settings.requiredBillingAddressFields
-        //        config.requiredShippingAddressFields = settings.requiredShippingAddressFields
-        //        config.shippingType = settings.shippingType
+        
+        // potential to incorporate billing address for further verification purposes
+        // config.requiredBillingAddressFields = settings.requiredBillingAddressFields
         config.additionalPaymentMethods = settings.additionalPaymentMethods
         config.smsAutofillDisabled = !settings.smsAutofillEnabled
         
-        let paymentContext = STPPaymentContext(apiAdapter: MyAPIClient.sharedClient,
-                                               configuration: config,
-                                               theme: settings.theme)
+        let paymentContext = STPPaymentContext(apiAdapter: MyAPIClient.sharedClient,configuration: config,theme: settings.theme)
+        
+        // Use this class to specify info that you've already collected from your user
         let userInformation = STPUserInformation()
         paymentContext.prefilledInformation = userInformation
         paymentContext.paymentAmount = price
         paymentContext.paymentCurrency = self.paymentCurrency
         self.paymentContext = paymentContext
         
+        // Payment UI Profile
         self.paymentRow = CheckoutRowView(title: "Payment", detail: "Select Payment",
                                           theme: settings.theme)
-        //        var shippingString = "Contact"
-        //        if config.requiredShippingAddressFields.contains(.postalAddress) {
-        //            shippingString = config.shippingType == .shipping ? "Shipping" : "Delivery"
-        //        }
-        //        self.shippingString = shippingString
-        //        self.shippingRow = CheckoutRowView(title: self.shippingString,
-        //                                           detail: "Enter \(self.shippingString) Info",
-        //            theme: settings.theme)
         self.totalRow = CheckoutRowView(title: "Total", detail: "", tappable: false,
                                         theme: settings.theme)
         self.buyButton = BuyButton(enabled: true, theme: settings.theme)
+        
+        // Establish currency key
         var localeComponents: [String: String] = [
             NSLocale.Key.currencyCode.rawValue: self.paymentCurrency,
             ]
@@ -118,7 +123,6 @@ class CheckoutViewController: UIViewController, STPPaymentContextDelegate {
         self.productImage.font = UIFont.systemFont(ofSize: 70)
         self.view.addSubview(self.totalRow)
         self.view.addSubview(self.paymentRow)
-        //        self.view.addSubview(self.shippingRow)
         self.view.addSubview(self.productImage)
         self.view.addSubview(self.buyButton)
         self.view.addSubview(self.activityIndicator)
@@ -128,11 +132,9 @@ class CheckoutViewController: UIViewController, STPPaymentContextDelegate {
         self.paymentRow.onTap = { [weak self] _ in
             self?.paymentContext.pushPaymentMethodsViewController()
         }
-        //        self.shippingRow.onTap = { [weak self] _ in
-        //            self?.paymentContext.pushShippingViewController()
-        //        }
     }
     
+    // Establish constant parameters for product image placement and layout
     override func viewDidLayoutSubviews() {
         super.viewDidLayoutSubviews()
         let width = self.view.bounds.width
@@ -141,8 +143,6 @@ class CheckoutViewController: UIViewController, STPPaymentContextDelegate {
                                            y: self.productImage.bounds.height/2.0 + rowHeight)
         self.paymentRow.frame = CGRect(x: 0, y: self.productImage.frame.maxY + rowHeight,
                                        width: width, height: rowHeight)
-        //        self.shippingRow.frame = CGRect(x: 0, y: self.paymentRow.frame.maxY,
-        //                                        width: width, height: rowHeight)
         self.totalRow.frame = CGRect(x: 0, y: self.paymentRow.frame.maxY,
                                      width: width, height: rowHeight)
         self.buyButton.frame = CGRect(x: 0, y: 0, width: 88, height: 44)
@@ -150,6 +150,7 @@ class CheckoutViewController: UIViewController, STPPaymentContextDelegate {
         self.activityIndicator.center = self.buyButton.center
     }
     
+    // verifies tapping of buy
     func didTapBuy() {
         self.paymentInProgress = true
         self.paymentContext.requestPayment()
@@ -162,6 +163,7 @@ class CheckoutViewController: UIViewController, STPPaymentContextDelegate {
                                                 completion: completion)
     }
     
+    // Payment verifier function
     func paymentContext(_ paymentContext: STPPaymentContext, didFinishWith status: STPPaymentStatus, error: Error?) {
         self.paymentInProgress = false
         let title: String
@@ -190,15 +192,11 @@ class CheckoutViewController: UIViewController, STPPaymentContextDelegate {
         else {
             self.paymentRow.detail = "Select Payment"
         }
-        //        if let shippingMethod = paymentContext.selectedShippingMethod {
-        //            self.shippingRow.detail = shippingMethod.label
-        //        }
-        //        else {
-        //            self.shippingRow.detail = "Enter \(self.shippingString) Info"
-        //        }
         self.totalRow.detail = self.numberFormatter.string(from: NSNumber(value: Float(self.paymentContext.paymentAmount)/100))!
     }
     
+    // "`STPPaymentContext` keeps track of all of the state around a payment. It will manage fetching a user's saved payment methods, tracking any information they select, and prompting them for required additional information before completing their purchase. It can be used to power your application's "payment confirmation" page." 
+    // Further error handling
     func paymentContext(_ paymentContext: STPPaymentContext, didFailToLoadWithError error: Error) {
         let alertController = UIAlertController(
             title: "Error",
@@ -217,39 +215,5 @@ class CheckoutViewController: UIViewController, STPPaymentContextDelegate {
         alertController.addAction(retry)
         self.present(alertController, animated: true, completion: nil)
     }
-    /*
-     func paymentContext(_ paymentContext: STPPaymentContext, didUpdateShippingAddress address: STPAddress, completion: @escaping STPShippingMethodsCompletionBlock) {
-     let upsGround = PKShippingMethod()
-     upsGround.amount = 0
-     upsGround.label = "UPS Ground"
-     upsGround.detail = "Arrives in 3-5 days"
-     upsGround.identifier = "ups_ground"
-     let upsWorldwide = PKShippingMethod()
-     upsWorldwide.amount = 10.99
-     upsWorldwide.label = "UPS Worldwide Express"
-     upsWorldwide.detail = "Arrives in 1-3 days"
-     upsWorldwide.identifier = "ups_worldwide"
-     let fedEx = PKShippingMethod()
-     fedEx.amount = 5.99
-     fedEx.label = "FedEx"
-     fedEx.detail = "Arrives tomorrow"
-     fedEx.identifier = "fedex"
-     
-     DispatchQueue.main.asyncAfter(deadline: .now() + 1.0) {
-     if address.country == nil || address.country == "US" {
-     completion(.valid, nil, [upsGround, fedEx], fedEx)
-     }
-     else if address.country == "AQ" {
-     let error = NSError(domain: "ShippingError", code: 123, userInfo: [NSLocalizedDescriptionKey: "Invalid Shipping Address",
-     NSLocalizedFailureReasonErrorKey: "We can't ship to this country."])
-     completion(.invalid, error, nil, nil)
-     }
-     else {
-     fedEx.amount = 20.99
-     completion(.valid, nil, [upsWorldwide, fedEx], fedEx)
-     }
-     }
-     }
-     */
 }
 

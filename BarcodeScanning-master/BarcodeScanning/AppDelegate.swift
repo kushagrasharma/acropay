@@ -2,34 +2,32 @@
 //  AppDelegate.swift
 //  BarcodeScanning
 //
-//  Created by
-//  Copyright (c) 2016 Quikcart. All rights reserved.
+//  Created by Acropay
+//  Copyright (c) 2016 Acropay. All rights reserved.
 //
 
+//Import appropriate swift libraries
 import UIKit
-import SlideMenuControllerSwift
 import Stripe
 
+// set constant variable
 let MOLTIN_COLOR = UIColor(red: (139.0/255.0), green: (98.0/255.0), blue: (181.0/255.0), alpha: 1.0)
 
 @UIApplicationMain
+// App delegate is a subclass of UI Responder, but a delegate of UIApplication Delegate
 class AppDelegate: UIResponder, UIApplicationDelegate {
     
-    
+    // declare window variable, optional type
     var window: UIWindow?
     
     func application(_ application: UIApplication, didFinishLaunchingWithOptions launchOptions: [UIApplicationLaunchOptionsKey: Any]?) -> Bool {
         // Override point for customization after application launch.
         // create viewController code...
         
-         STPPaymentConfiguration.shared().publishableKey = "pk_test_lttP2oCNWtN1FTKiQMyBpS7M"
-         STPPaymentConfiguration.shared().appleMerchantIdentifier = "your apple merchant identifier"
-        
-//        let slideMenuController = SlideMenuController(mainViewController: mainViewController, leftMenuViewController: leftViewController, rightMenuViewController: rightViewController)
-//        self.window?.rootViewController = slideMenuController
-//        self.window?.makeKeyAndVisible()
-        
-        return true
+        // Potential for applepay integration when developer account becomes available
+        STPPaymentConfiguration.shared().publishableKey = "pk_test_lttP2oCNWtN1FTKiQMyBpS7M"
+        STPPaymentConfiguration.shared().appleMerchantIdentifier = "your apple merchant identifier"
+            return true
     }
     
     func applicationWillResignActive(_ application: UIApplication) {
