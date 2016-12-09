@@ -18,13 +18,10 @@ class MyAPIClient: NSObject, STPBackendAPIAdapter {
     
     // NSURLSession class and related classes provide an API for downloading content.
     let session: URLSession
-<<<<<<< HEAD
-    
     //Set default or empty vals for following vars
     var baseURLString: String? = nil
-=======
+
     var baseURLString: String?
->>>>>>> 0d9fb9ad3cb83a0225584a6d692119cfce231e04
     var defaultSource: STPCard? = nil
     var sources: [STPCard] = []
 
