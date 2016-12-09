@@ -6,13 +6,21 @@
 //  Copyright © 2016 Acropay. All rights reserved.
 //
 
+// Make necessary imports of swift libraires
 import Foundation
 import Stripe
 
+//APIclient subclass of NSObject (inherits basic interface to runtime system)
 class MyAPIClient: NSObject, STPBackendAPIAdapter {
 
+    //Instantiating MyAPIClient
     static let sharedClient = MyAPIClient()
+    
+    // NSURLSession class and related classes provide an API for downloading content.
     let session: URLSession
+    //Set default or empty vals for following vars
+    var baseURLString: String? = nil
+
     var baseURLString: String?
     var defaultSource: STPCard? = nil
     var sources: [STPCard] = []

@@ -11,6 +11,11 @@
 			<key>orderHint</key>
 			<integer>1</integer>
 		</dict>
+		<key>Alamofire-Synchronous.xcscheme</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 		<key>Alamofire.xcscheme</key>
 		<dict>
 			<key>orderHint</key>
@@ -73,7 +78,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>07D02E8F004C9040CE2A3CD82903CD23</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>0C160830ED41E62A6A5BE0A00BF32767</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>0C5C2E5EEE3A42C51E9F6E1BC38FBABB</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>112E7F3332867198861090D7AA507AA4</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -128,7 +148,22 @@
 			<key>primary</key>
 			<true/>
 		</dict>
+		<key>C696453EACF99BEE5385A1F3D8C478D0</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>CE0D8725A4304185BDF98A2FB0589D5D</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
 		<key>CF671F7E57B92905F1CC91D036D6B4A7</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>EBE460D3E3A3CF1AFBBDFA387940E5E7</key>
 		<dict>
 			<key>primary</key>
 			<true/>
@@ -139,6 +174,11 @@
 			<true/>
 		</dict>
 		<key>F9A6FC8238C6B8A68667F9B704826CFC</key>
+		<dict>
+			<key>primary</key>
+			<true/>
+		</dict>
+		<key>FA21E475A035DE0EF7C1F8AF1F9B591E</key>
 		<dict>
 			<key>primary</key>
 			<true/>

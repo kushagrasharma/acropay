@@ -35,5 +35,66 @@
             landmarkType = "3">
          </BreakpointContent>
       </BreakpointProxy>
+      <BreakpointProxy
+         BreakpointExtensionID = "Xcode.Breakpoint.FileBreakpoint">
+         <BreakpointContent
+            shouldBeEnabled = "Yes"
+            ignoreCount = "0"
+            continueAfterRunningActions = "No"
+            filePath = "BarcodeScanning/Product.swift"
+            timestampString = "502939696.639776"
+            startingColumnNumber = "9223372036854775807"
+            endingColumnNumber = "9223372036854775807"
+            startingLineNumber = "10"
+            endingLineNumber = "10">
+            <Locations>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BarcodeScanning.Product.__deallocating_deinit"
+                  moduleName = "BarcodeScanning"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Faisal/Documents/final_project/BarcodeScanning-master/BarcodeScanning/Product.swift"
+                  timestampString = "502939700.842764"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BarcodeScanning.Product.init () -&gt; BarcodeScanning.Product"
+                  moduleName = "BarcodeScanning"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Faisal/Documents/final_project/BarcodeScanning-master/BarcodeScanning/Product.swift"
+                  timestampString = "502939700.863177"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "11"
+                  endingLineNumber = "11"
+                  offsetFromSymbolStart = "12">
+               </Location>
+               <Location
+                  shouldBeEnabled = "Yes"
+                  ignoreCount = "0"
+                  continueAfterRunningActions = "No"
+                  symbolName = "BarcodeScanning.Product.__allocating_init () -&gt; BarcodeScanning.Product"
+                  moduleName = "BarcodeScanning"
+                  usesParentBreakpointCondition = "Yes"
+                  urlString = "file:///Users/Faisal/Documents/final_project/BarcodeScanning-master/BarcodeScanning/Product.swift"
+                  timestampString = "502939700.864678"
+                  startingColumnNumber = "9223372036854775807"
+                  endingColumnNumber = "9223372036854775807"
+                  startingLineNumber = "0"
+                  endingLineNumber = "0"
+                  offsetFromSymbolStart = "4">
+               </Location>
+            </Locations>
+         </BreakpointContent>
+      </BreakpointProxy>
    </Breakpoints>
 </Bucket>
