@@ -17,7 +17,7 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     @IBOutlet weak var totalLabel:UILabel?
     @IBOutlet weak var checkoutButton:UIButton?
     
-    var productStore: ProductStore? = ProductStore()
+    var productStore: ProductStore?
     
     fileprivate let BILLING_ADDRESS_SEGUE_IDENTIFIER = "showBillingAddress"
     
@@ -27,13 +27,10 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
         self.title = "Cart"
         
         totalLabel?.text = ""
-        
-        
     }
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        // only need to refresh cart if coming from add product page, not barcode page
         refreshCart()
         
     }
@@ -44,6 +41,12 @@ class CartViewController: UIViewController, UITableViewDelegate, UITableViewData
     }
     
     func refreshCart() {
+        var i = 0
+        for cell in self.tableView?.visibleCells as! [CartTableViewCell]{
+            cartTableViewCellSetQuantity(cell, quantity: (productStore?.allProducts[i].quantity)!)
+            i += 1
+        }
+        print(productStore?.stringDescription())
         // Reset cart total
         self.totalLabel?.text = "$" + String(format: "%.2f", self.productStore!.priceSum())
         // And reload table of cart items...

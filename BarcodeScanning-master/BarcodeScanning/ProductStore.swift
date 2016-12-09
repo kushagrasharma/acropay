@@ -13,9 +13,12 @@ class ProductStore {
     var allProducts = [Product]()
     
     func addProduct(_ product: Product){
-        
-        self.allProducts.append(product)
-        
+        if let index = withCode(product.barcodeNumber){
+            allProducts[index].quantity += 1
+        }
+        else{
+            self.allProducts.append(product)
+        }
     }
     
     func withCode(_ barcode: String) -> Int?{
@@ -46,7 +49,11 @@ class ProductStore {
     }
     
     func stringDescription() -> String{
-        return "This store has \(allProducts.count) elements"
+        var x = "This store has \(allProducts.count) elements "
+        for product in allProducts{
+            x += "[\(product.name) \(product.quantity) "
+        }
+        return x
     }
     
 }
