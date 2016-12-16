@@ -9,6 +9,7 @@
 import UIKit
 import Stripe
 
+
 class CheckoutRowView: UIView {
 
     var loading = false {
