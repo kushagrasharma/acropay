@@ -16,6 +16,9 @@ schema = {
     'description': {
         'type': 'string'
     }
+    'images': {
+        'type': 'list'
+    }
 }
 
 products = {
