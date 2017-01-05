@@ -31,6 +31,8 @@ class Product: NSObject{
             let json = JSON(data)
             self.name = (json["name"].string!)
             self.priceInDollars = round(100*(json["price"].double!))/100
+            print(json["images"])
+            print(json)
             self.images = json["images"].arrayValue.map { $0.string!}
             self.productDescription = json["description"].string!
         }

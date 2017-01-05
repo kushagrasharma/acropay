@@ -21,6 +21,9 @@
                     <view key="view" contentMode="scaleToFill" id="kh9-bI-dsS" userLabel="Content View">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="667"/>
                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
+                        <userGuides>
+                            <userLayoutGuide location="333" affinity="minY"/>
+                        </userGuides>
                         <subviews>
                             <view contentMode="scaleToFill" translatesAutoresizingMaskIntoConstraints="NO" id="fhr-f7-UgC" userLabel="Output View">
                                 <rect key="frame" x="0.0" y="66.5" width="375" height="534"/>
@@ -64,7 +67,7 @@
             <objects>
                 <navigationController automaticallyAdjustsScrollViewInsets="NO" id="fb1-gY-r9Y" sceneMemberID="viewController">
                     <toolbarItems/>
-                    <navigationBar key="navigationBar" contentMode="scaleToFill" misplaced="YES" id="Bdy-Ct-JMF">
+                    <navigationBar key="navigationBar" contentMode="scaleToFill" id="Bdy-Ct-JMF">
                         <rect key="frame" x="0.0" y="0.0" width="375" height="44"/>
                         <autoresizingMask key="autoresizingMask"/>
                     </navigationBar>
@@ -319,6 +322,6 @@
         <image name="second" width="30" height="30"/>
     </resources>
     <inferredMetricsTieBreakers>
-        <segue reference="03T-MK-JqO"/>
+        <segue reference="ZPh-xv-YVE"/>
     </inferredMetricsTieBreakers>
 </document>
