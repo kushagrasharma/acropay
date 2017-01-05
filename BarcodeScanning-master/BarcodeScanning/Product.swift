@@ -25,9 +25,8 @@ class Product: NSObject{
         self.barcodeNumber = serialNumber
         self.quantity = 1
         self.dateCreated = Date()
-        let response = Alamofire.request("http://acropay.io/products/\(serialNumber)")
+        let response = Alamofire.request("http://acropay.io/products/\(serialNumber)").validate()
             .responseJSON()
-        print(JSON(response.result.value))
         if let data = response.result.value{
             let json = JSON(data)
             self.name = (json["name"].string!)
