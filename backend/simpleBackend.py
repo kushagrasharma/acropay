@@ -13,7 +13,7 @@ print 'Content-Type: text/json'
 print                               
  
 #3
-stripe.api_key = ' sk_test_9yYMAQqoxKVttd23W7Ftz317'
+stripe.api_key = 'sk_test_9yYMAQqoxKVttd23W7Ftz317'
  
 #4
 json_data = sys.stdin.read()

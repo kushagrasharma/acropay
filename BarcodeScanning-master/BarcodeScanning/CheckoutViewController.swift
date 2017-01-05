@@ -2,7 +2,7 @@
 //  CheckoutViewController.swift
 //  Acropay
 //
-//  Created by Kushagra Sharma on 12/8/16.
+//  Created by Faisal Younus on 12/8/16.
 //  Copyright © 2016 Acropay. All rights reserved.
 //
 

@@ -19,7 +19,6 @@
 		B11B5F821DF983E200A142CC /* Networking.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11B5F811DF983E200A142CC /* Networking.swift */; };
 		B11B5F841DF9847600A142CC /* MyAPIClient.swift in Sources */ = {isa = PBXBuildFile; fileRef = B11B5F831DF9847600A142CC /* MyAPIClient.swift */; };
 		B12E7AD51DF66D2E0072B31D /* ProductViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B12E7AD31DF66D2E0072B31D /* ProductViewController.swift */; };
-		B12E7AD61DF66D2E0072B31D /* ProductViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B12E7AD41DF66D2E0072B31D /* ProductViewController.xib */; };
 		B164CB801DF9178F0053FDA4 /* SwiftSpinner.swift in Sources */ = {isa = PBXBuildFile; fileRef = B164CB7F1DF9178F0053FDA4 /* SwiftSpinner.swift */; };
 		B164CB8B1DF918820053FDA4 /* CollectionTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B164CB821DF918820053FDA4 /* CollectionTableViewCell.swift */; };
 		B164CB8C1DF918820053FDA4 /* ProductsListTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = B164CB831DF918820053FDA4 /* ProductsListTableViewCell.swift */; };
@@ -33,7 +32,6 @@
 		B164CB971DF919990053FDA4 /* String+Numeric.swift in Sources */ = {isa = PBXBuildFile; fileRef = B164CB951DF919990053FDA4 /* String+Numeric.swift */; };
 		B164CB9B1DF922380053FDA4 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B164CB9A1DF922380053FDA4 /* Main.storyboard */; };
 		B17648D11DF658C2007A4F84 /* CartViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B17648CF1DF658C2007A4F84 /* CartViewController.swift */; };
-		B17648D21DF658C2007A4F84 /* CartViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = B17648D01DF658C2007A4F84 /* CartViewController.xib */; };
 		B1821EC51DF977A0004E31B5 /* CheckoutViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1821EC41DF977A0004E31B5 /* CheckoutViewController.swift */; };
 		B1821EC71DF97E07004E31B5 /* SettingsViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = B1821EC61DF97E07004E31B5 /* SettingsViewController.swift */; };
 		B1D098F41DF7904C007EDA01 /* Podfile in Resources */ = {isa = PBXBuildFile; fileRef = B1D098F31DF7904C007EDA01 /* Podfile */; };
@@ -69,7 +67,6 @@
 		B11B5F811DF983E200A142CC /* Networking.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Networking.swift; sourceTree = "<group>"; };
 		B11B5F831DF9847600A142CC /* MyAPIClient.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = MyAPIClient.swift; sourceTree = "<group>"; };
 		B12E7AD31DF66D2E0072B31D /* ProductViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductViewController.swift; sourceTree = "<group>"; };
-		B12E7AD41DF66D2E0072B31D /* ProductViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = ProductViewController.xib; sourceTree = "<group>"; };
 		B164CB7F1DF9178F0053FDA4 /* SwiftSpinner.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SwiftSpinner.swift; sourceTree = "<group>"; };
 		B164CB821DF918820053FDA4 /* CollectionTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CollectionTableViewCell.swift; sourceTree = "<group>"; };
 		B164CB831DF918820053FDA4 /* ProductsListTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ProductsListTableViewCell.swift; sourceTree = "<group>"; };
@@ -83,7 +80,6 @@
 		B164CB951DF919990053FDA4 /* String+Numeric.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = "String+Numeric.swift"; sourceTree = "<group>"; };
 		B164CB9A1DF922380053FDA4 /* Main.storyboard */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.storyboard; path = Main.storyboard; sourceTree = "<group>"; };
 		B17648CF1DF658C2007A4F84 /* CartViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CartViewController.swift; sourceTree = "<group>"; };
-		B17648D01DF658C2007A4F84 /* CartViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = CartViewController.xib; sourceTree = "<group>"; };
 		B1821EC41DF977A0004E31B5 /* CheckoutViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = CheckoutViewController.swift; sourceTree = "<group>"; };
 		B1821EC61DF97E07004E31B5 /* SettingsViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = SettingsViewController.swift; sourceTree = "<group>"; };
 		B1D098F31DF7904C007EDA01 /* Podfile */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
@@ -143,7 +139,6 @@
 				B164CB9A1DF922380053FDA4 /* Main.storyboard */,
 				B17648D01DF658C2007A4F84 /* CartViewController.xib */,
 				B12E7AD31DF66D2E0072B31D /* ProductViewController.swift */,
-				B12E7AD41DF66D2E0072B31D /* ProductViewController.xib */,
 				B1D098F31DF7904C007EDA01 /* Podfile */,
 				339379A61B080C0A003A722D /* Images.xcassets */,
 				3393799D1B080C0A003A722D /* Supporting Files */,
@@ -306,11 +301,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				B1D098F41DF7904C007EDA01 /* Podfile in Resources */,
-				B17648D21DF658C2007A4F84 /* CartViewController.xib in Resources */,
 				339379AA1B080C0A003A722D /* LaunchScreen.xib in Resources */,
 				B164CB9B1DF922380053FDA4 /* Main.storyboard in Resources */,
 				339379A71B080C0A003A722D /* Images.xcassets in Resources */,
-				B12E7AD61DF66D2E0072B31D /* ProductViewController.xib in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
